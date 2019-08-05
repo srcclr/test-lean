@@ -1,0 +1,6 @@
+---
+title: 'Oct Wave: The Software Engineering Zeitgeist'
+author: 'Asankhaya Sharma'
+include-before: # newline between title and toc
+- '`\newpage{}`{=latex}'
+---

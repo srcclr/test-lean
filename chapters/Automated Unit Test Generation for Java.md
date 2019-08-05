@@ -1,3 +1,8 @@
+
+\newpage{}
+
+# Automated Unit Test Generation for Java
+
 Unit testing is an important aspect of software development. Having a proper test suite for your project can help detect bugs early and prevent regressions. Wouldn't it be great if we could generate unit test cases automatically? Well, it is certainly possible and I will explain in this article how you can do so for Java.
 
 Recently, I had a chance to look at unit test case generation for Java. I had forked an old cross platform serialization library [wox](https://github.com/codelion/wox) and it did not come with a test suite. I had to make a few changes and fix some bugs in the library to make it work with the current version of Java platform. I wanted to ensure that the changes I made did not break any existing functionality. Since the wox library did not come with its own set of test cases it was difficult to check that no regression bugs were introduced.
