@@ -1,6 +1,7 @@
 # Oct Wave: The Software Engineering Zeitgeist
 
-*zeitgeist* _/ˈzʌɪtɡʌɪst/_ (noun): _the defining spirit or mood of a particular period of history as shown by the ideas and beliefs of the time._
+**zeitgeist** _/ˈzʌɪtɡʌɪst/_ (noun): 
+_the defining spirit or mood of a particular period of history as shown by the ideas and beliefs of the time._
 
 This book written by former engineers at SourceClear, is a series of essays and articles on the following topics:
 
