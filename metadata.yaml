@@ -1,6 +1,13 @@
 ---
 title: 'Oct Wave: The Software Engineering Zeitgeist'
+author: 'Darius Foo'
+author: 'Hendy Chua'
+author: 'Jason Yeo'
+author: 'Andrew Santosa'
 author: 'Asankhaya Sharma'
+language: en-US
+publisher: SourceClear
+rights: Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
 include-before: # newline between title and toc
 - '`\newpage{}`{=latex}'
 ---
