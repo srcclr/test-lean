@@ -1,5 +1,6 @@
+# Going beyond unit tests with property based testing and automated test case generation
 
-# Automated Unit Test Generation for Java
+## Automated Unit Test Generation for Java
 
 Unit testing is an important aspect of software development. Having a proper test suite for your project can help detect bugs early and prevent regressions. Wouldn't it be great if we could generate unit test cases automatically? Well, it is certainly possible and I will explain in this article how you can do so for Java.
 
