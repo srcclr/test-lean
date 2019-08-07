@@ -14,5 +14,6 @@ This book captures the essence of engineering at SourceClear and is a collection
 - A primer about prasers and parsing
 - SGL: design and implementation of a domain-specific langauge
 - [GramTest: a tool for grammar based test case generation](chapters/09-GramTest:%20a%20tool%20for%20grammar%20based%20test%20case%20generation.md)
+- [A deep dive into analyzing dynamic languages](chapters/10-A%20deep%20dive%20into%20analyzing%20dynamic%20languages.md)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
