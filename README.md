@@ -3,7 +3,7 @@
 **zeitgeist** _/ˈzʌɪtɡʌɪst/_ (noun): 
 _the defining spirit or mood of a particular period of history as shown by the ideas and beliefs of the time._
 
-This book captures the essence of engineering at SourceClear and is a collection of essays & articles on the following topics:
+This book captures the essence of engineering at SourceClear. It is a collection of essays & articles on the following topics:
 
 - [Going beyond unit tests with property based testing and automated test case generation](chapters/01-Going%20beyond%20unit%20tests%20with%20property%20based%20testing%20and%20automated%20test%20case%20generation.md)
 - Feature testing of command-line interfaces with Aruba
