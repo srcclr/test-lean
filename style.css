@@ -41,13 +41,8 @@ header#title-block-header {
 }
 
 nav {
-  padding: 6em 0;
+  padding: 0 0 6em 0;
   border-bottom: 2px dotted #aaaaaa;
-
-}
-
-nav::before {
-  content: 'Table of Contents'
 }
 
 @media (min-width: 480px) {
