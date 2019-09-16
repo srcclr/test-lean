@@ -35,7 +35,7 @@ $(BUILD)/epub/$(OUTPUT_FILENAME).epub:	$(MAKEFILE) $(METADATA) $(CHAPTERS) $(CSS
 
 $(BUILD)/html/$(HTML_OUTPUT_FILENAME).html:	$(MAKEFILE) $(METADATA) $(CHAPTERS) $(CSS_FILE) $(IMAGES)
 	mkdir -p $(BUILD)/html
-	pandoc $(ARGS) --standalone --to=html5 -o $@ $(CHAPTERS)
+	pandoc $(ARGS) --standalone --to=html5 -o $@ $(CHAPTERS) --template templates/default.html --toc -V toctitle:'Table of Contents'
 	cp -R $(IMAGES_FOLDER)/ $(BUILD)/html/$(IMAGES_FOLDER)/
 	cp $(CSS_FILE) $(BUILD)/html/$(CSS_FILE)
 

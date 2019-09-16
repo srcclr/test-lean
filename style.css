@@ -17,6 +17,7 @@ pre {
   position: relative;
   background-color: white;
   padding: 10px;
+  overflow-x: scroll;
 }
 
 a {
@@ -29,3 +30,39 @@ a:hover {
   border-bottom: 0;
 }
 
+h1.title {
+  font-size: 3.1em;
+  line-height: 1.4em;
+}
+
+header#title-block-header {
+  padding: 12em 2em;
+  border-bottom: 2px dotted #aaaaaa;
+}
+
+nav {
+  padding: 0 0 6em 0;
+  border-bottom: 2px dotted #aaaaaa;
+}
+
+@media (min-width: 480px) {
+  h1.title {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  header .author {
+    text-align: leftt;
+  }
+}
+
+@media (min-width: 768px) {
+  h1.title {
+    text-align: center;
+  }
+
+  header .author {
+    text-align: center;
+    padding: 0 2em;
+  }
+}
