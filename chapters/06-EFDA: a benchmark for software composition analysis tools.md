@@ -7,7 +7,7 @@ At SourceClear, we believe data is king. However, even before those data can be 
 ## Open-Sourcing EFDA
 Today, we are releasing a collection of sample projects as a single open source project called Evaluation Framework for Dependency Analysis (EFDA). The code repo can be found here. This repository will be managed by the Continuous-Security Security project which we will be announcing in a few weeks. In this repository, you will find projects implemented in various languages and with different setups that aim to test the features of an OSS management tool. The projects contain details such as the number of dependencies, whether they are direct or transitive dependencies, and the number of vulnerabilities present. In this repository, you will also find a spreadsheet that lists the features being tested. This spreadsheet allows you to customize the importance of the features and compute a score to determine how well an OSS management tool fits your needs.
 
-![EFDA Spreadsheet](../images/efda-spreadsheet.png)
+![EFDA Spreadsheet](images/efda-spreadsheet.png)
 
 ## Our Guiding Principles
 When we set up these example projects, we followed a set of guiding principles.

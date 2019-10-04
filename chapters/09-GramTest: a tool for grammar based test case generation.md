@@ -279,7 +279,7 @@ By using all the three tips we get a tool that is more useful and has practical 
 
 Next we will see how you can use GramTest to generate continuous tests that can in-turn be used to fuzz Java libraries and applications.
 
-![Partial grammar for URLs](../images/url-grammar.png)
+![Partial grammar for URLs](images/url-grammar.png)
 
 As an example we will use the grammar for URLs as defined in [rfc1738](https://tools.ietf.org/html/rfc1738). Part of the grammar is shown above and as you can see, it if fairly complex. If you directly run GramTest from command line using this grammar as input you will get some interesting test cases:
 
