@@ -62,36 +62,23 @@ together, particularly after making updates to the source code of the CLI agent.
 The technical objectives include two:
 
 * To ensure that the agent actually performs the computation that we expect of
-  it. This, in essence is the test for the *liveness* of it. This technical
-  objective is also what is often specifically meant by *validation* in the
-  literature.
+  it. That is, for *validation*.
 
-* To ensure that the result of the computation is what we expect. This, in
-  essence is the test for the *safety* of the agent, also known as *invariance*.
+* To ensure that the result of the computation is what we expect. That is, for
+  *ensuring correctness*.
 
-Both the liveness and the safety/invariance of the system are called its
-*property*. It should be obvious that the major limitation of testing is in the
-limited number of properties that we can specify. We cannot ensure that the
-software will be have correctly if the particular behavior is untested. In other
-words, it is unable to ensure that something unexpected will never happen. This
-is precisely because it can only ensure a limited number of properties. There
-are other approaches to ensure program correctness called *verification*.
-The proponents of the verification technique often quote E. W. Dijkstra:
-
-> Program testing can be used to show the presence of bugs, but never to show
-> their absence! (*Notes on Structured Programming*, 1970)
-
-However, verification in practice is just a form testing, but centered around
-the use of formal logic to generalize the way liveness and safety are specified.
-As such, it also suffers from incompleteness issue. The problem is, you can only
-specify that a bug does not exist if you could specify the bug.
+It should be obvious that the major limitation of testing is in the limited
+number of ways we can validate or ensure correct the software under test. We
+cannot ensure that the software will be have correctly if the particular
+behavior is untested. In other words, it is unable to ensure that something
+unexpected will never happen.
 
 Testing is typically done by executing the software or part of it, and observe
-the outcome. Liveness can be checked by observing that the execution does reach
-some favorable end points (no exceptions, hangs, etc., unless these are what we
-test the software for), whereas safety/invariance can be checked by observing
-that whenever a favorable end state is reached, the computation result is
-correct.
+the outcome. Validation can be performed by observing that the execution does
+reach some favorable end points (no exceptions, hangs, etc., unless these are
+what we test the software for), whereas correctness can be determined by
+observing that whenever a favorable end state is reached, the computation result
+matches expectation.
 
 ## Capture and Replay
 
@@ -101,37 +88,30 @@ central, PyPi, etc.) when the CLI agent scans a repository:
 
 ![CLI Agent Interaction with the SCA Server](https://srcclr.github.io/oct-wave/images/agent-server-interaction.png)
 
-Veracode has both production server and *quality assurance* (*QA*) server used
-for testing, and here the QA server is used. As mentioned, our focus in on the
-regression testing, and this requires us to specify the properties to test. The
-purpose of our system testing is to test the interactions between the SCA
+The purpose of our system testing is to test the interactions between the SCA
 system's components, where it needs to check that the proper interaction is
-actually performed (liveness), and that the content of the interaction is as
-expected (safety). 
+actually performed (validation), and that the content of the interaction is as
+expected (correctness). The CLI agent is a highly complex software, which limits
+us into performing black-box testing only. In black-box testing, we check for
+the outputs of the system under test without considering the implementation
+details of the system itself. Therefore, when scanning a project implemented in
+a particular language or build system, we test that *the CLI agent sends the
+correct requests* to the SCA server. This is because we consider the requests to
+be the outputs of the CLI agent. As we can see here, we perform validation by
+observing that the CLI agent actually sends the requests during its execution,
+and we ensure correctness by observing that each time the CLI agent sends a
+request, it sends the *correct* one. 
 
-The CLI agent is a highly complex software, which limits us into performing
-black-box testing only. In black-box testing, we check for the outputs of the
-system under test without considering the implementation details of the system
-itself. Therefore, when scanning a project implemented in a particular language
-or build system, we test that *the CLI agent sends the correct requests* to the
-SCA server. This is because we consider the requests to be the outputs of the
-CLI agent. As we can see here, our liveness property is that the agent
-eventually sends the requests during its execution, and our safety property is
-that each time it sends a request, it sends the *correct* one. We define a
-*correct* request to be a request that matches our record, when the same project
-was scanned last.
+Here we need to define what is a correct request. We define a *correct* request
+to be a request that matches our record, when the same project was scanned last.
+Therefore, there is a need to store the requests for a successful run once, for
+comparison with subsequent runs.
 
-In summary, for our setting we can identify the following needs:
-
-1. The need to record the requests sent by the agent. This is used for comparing
-   the new request sent to the SCA server when testing the agent with the
-   recorded requests.
-
-2. The need to record the responses sent back by the SCA server and the library
-   repository to the CLI agent. These responses are from the previous successful
-   runs, so that when the failure occurs in repeat runs, we can isolate the
-   cause to be that of the CLI agent and not due to changes and failures in the
-   remote systems (the SCA server or the library repository).
+Not only the requests, we also need to record the responses sent back by the SCA
+server and the library repository to the CLI agent. These responses are from the
+previous successful run, so that when the failure occurs in repeat runs, we can
+isolate the cause to be that of the CLI agent and not due to changes and
+failures in the remote systems (the SCA server or the library repository).
 
 The system testing framework thus supports two separate activities:
 
@@ -161,31 +141,6 @@ repository to the CLI agent. This is because **the test subject is the CLI
 agent**, and therefore we focus our effort in matching the requests with the
 recorded requests, since the requests are the outputs of the agent.
 
-## Implementation of the Testing Framework
-
-The following diagram shows the testing framework's components and the data that
-flow between them.
-
-![CLI Agent System Testing Framework](https://srcclr.github.io/oct-wave/images/regression-tests.png)
-
-The implementation of the testing framework is included in the source code of
-the CLI agent. It allows the user to perform both capture and replay of the
-recorded requests and responses. During normal testing, for which we use the
-Gitlab CI, we perform replay, however, sometimes some changes either in the CLI
-agent, the SCA server, or the library repository, require us to re-capture the
-requests and responses. For performing the capture and replay tasks, the
-implementation provides two scripts:
-
-* The `regression` script is an outer-level shell script to start a container,
-  and automatically invokes the capture or replay activity within the
-  container.
-
-* The `regression.py` script is the Python script that is executed within a
-  container to automatically invokes the capture or replay activity. The
-  `regression` outer-level shell script invokes this Python script.
-  `regression.py` clones the appropriate repositories in a suite and invokes the
-  agent to scan the repositories.
-
 The CLI agent supports scanning projects implemented using a variety of
 languages and build systems from Java Maven projects to Objective-C with
 Cocoapods and even C/C++ with `make`. Due to a large number and variety of
@@ -201,7 +156,7 @@ interface, but also including the integration testing job, whose name is
 
 ## Afterthoughts
 
-Integration testing for a client/server system has many facets. Here we have
+System testing for a client/server system has many facets. Here we have
 discussed several of them, including matching network interactions. At the
 moment we cannot guarantee that our design has been optimal. Our framework has
 weaknesses, the most important one is that changes in the environments may cause
@@ -211,7 +166,7 @@ the replay fails not because of regression, but because dependency version
 numbers that are detected in new scans do not match the recorded version
 dependencies. For issues such as these, future improvements can be made, such as
 having a mock library repository that does not (frequently) update the versions
-of the libraries it include. It seems to me there is an urgent need for a
-unified framework for testing client/server systems.
+of the libraries it host.
+
 
 
