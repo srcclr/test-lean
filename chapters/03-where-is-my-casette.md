@@ -8,7 +8,7 @@ offerings from various companies. It helps developers identify vulnerable
 open-source libraries used in the software they develop. The following picture
 shows the architecture of an SCA system:
 
-![Software Composition Analysis System](images/sca-overview.png)
+![Software Composition Analysis System](https://srcclr.github.io/oct-wave/images/sca-overview.png)
 
 In an SCA system, a customer scans their applications using a scanner software,
 which will then send the evidence of third-party dependencies to a server for
@@ -99,7 +99,7 @@ The following message sequence chart shows a simplification of the interactions
 among the CLI agent, the SCA server, and the library repository (e.g., Maven
 central, PyPi, etc.) when the CLI agent scans a repository:
 
-![CLI Agent Interaction with the SCA Server](images/agent-server-interaction.png)
+![CLI Agent Interaction with the SCA Server](https://srcclr.github.io/oct-wave/images/agent-server-interaction.png)
 
 Veracode has both production server and *quality assurance* (*QA*) server used
 for testing, and here the QA server is used. As mentioned, our focus in on the
@@ -166,7 +166,7 @@ recorded requests, since the requests are the outputs of the agent.
 The following diagram shows the testing framework's components and the data that
 flow between them.
 
-![CLI Agent System Testing Framework](images/regression-tests.png)
+![CLI Agent System Testing Framework](https://srcclr.github.io/oct-wave/images/regression-tests.png)
 
 The implementation of the testing framework is included in the source code of
 the CLI agent. It allows the user to perform both capture and replay of the
@@ -197,8 +197,7 @@ testing. The following shows all the suites as shown by the Gitlab CI web
 interface, but also including the integration testing job, whose name is
 `functional`.
 
-![CLI Agent Test Jobs](images/test-jobs.png)
-
+![CLI Agent Test Jobs](https://srcclr.github.io/oct-wave/images/test-jobs.png)
 
 ## Afterthoughts
 
