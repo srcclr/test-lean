@@ -1,5 +1,5 @@
 
-# Where is My Cassette? Mocking System Testing using Record and Playback
+# Where is My Cassette? Mocking System Testing using Capture and Replay
 
 ## Introduction
 
