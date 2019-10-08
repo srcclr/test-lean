@@ -42,9 +42,9 @@ There are three kinds of automated testing that we perform for the CLI agent:
 In this article we discuss our approach to system testing, which, in order to
 test for the output correctness, generates checks using a *capture* mechanism
 and perform the actual test using a *replay* mechanism. The advantage of using
-such mechanism is that it allows us to *mock* the SCA server and the library
+such mechanisms is that it allows us to *mock* the SCA server and the library
 repositories during agent run, such as when issues are detected by the tests, we
-will be able to immedately localize as an issue belonging to the agent itself.
+will be able to immediately localize as an issue belonging to the agent itself.
 As at the time of writing, for Veracode agent-based scan, the system testing has
 been implemented for real project scans on the Linux platform, and the same for
 Windows platform is planned.
@@ -62,8 +62,7 @@ together, particularly after making updates to the source code of the CLI agent.
 The technical objectives include two:
 
 * To ensure that the agent actually performs the computation that we expect of
-  it. This, in essence is the test for the *liveness* of it. It is also
-  sometimes called *termination* for sequential software. This technical
+  it. This, in essence is the test for the *liveness* of it. This technical
   objective is also what is often specifically meant by *validation* in the
   literature.
 
@@ -108,10 +107,19 @@ regression testing, and this requires us to specify the properties to test. The
 purpose of our system testing is to test the interactions between the SCA
 system's components, where it needs to check that the proper interaction is
 actually performed (liveness), and that the content of the interaction is as
-expected (safety). Here, when scanning a project implemented in a particular
-language or build system, we test that *the CLI agent sends the correct
-requests* to the SCA server. We define a *correct* request to be a request that
-matches our record, when the same project was scanned last. 
+expected (safety). 
+
+The CLI agent is a highly complex software, which limits us into performing
+black-box testing only. In black-box testing, we check for the outputs of the
+system under test without considering the implementation details of the system
+itself. Therefore, when scanning a project implemented in a particular language
+or build system, we test that *the CLI agent sends the correct requests* to the
+SCA server. This is because we consider the requests to be the outputs of the
+CLI agent. As we can see here, our liveness property is that the agent
+eventually sends the requests during its execution, and our safety property is
+that each time it sends a request, it sends the *correct* one. We define a
+*correct* request to be a request that matches our record, when the same project
+was scanned last.
 
 In summary, for our setting we can identify the following needs:
 
@@ -186,7 +194,7 @@ there are 17. The suites and the functional testing are executed in parallel
 (whenever CPU resources are available) in the Gitlab CI. The name of the CI test
 job indicates the kind of repositories that are scanned by the CLI agent for
 testing. The following shows all the suites as shown by the Gitlab CI web
-interface, but also including the integeration testing job, whose name is
+interface, but also including the integration testing job, whose name is
 `functional`.
 
 ![CLI Agent Test Jobs](images/test-jobs.png)
