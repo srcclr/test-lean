@@ -11,9 +11,7 @@ This book captures the essence of engineering at SourceClear. It is a collection
 - Proof Pearl: On the correctness of update advisor
 - [Contract testing with Pact](chapters/05-Contract%20testing%20with%20Pact.md)
 - [EFDA: a benchmark for software composition analysis tools](chapters/06-EFDA:%20a%20benchmark%20for%20software%20composition%20analysis%20tools.md)
-- A primer about prasers and parsing
-- SGL: design and implementation of a domain-specific langauge
+- Travelling through time with Cypress
 - [GramTest: a tool for grammar based test case generation](chapters/09-GramTest:%20a%20tool%20for%20grammar%20based%20test%20case%20generation.md)
-- [A deep dive into analyzing dynamic languages](chapters/10-A%20deep%20dive%20into%20analyzing%20dynamic%20languages.md)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
