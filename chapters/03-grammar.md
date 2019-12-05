@@ -1,4 +1,4 @@
-# GramTest: a tool for grammar based test case generation
+# GramTest: a tool for grammar-based test case generation
 
 In a series of previous articles, we learnt about [automated unit test generation](https://blog.srcclr.com/automated-unit-test-generation-for-java/) using search-based and [property-based](https://blog.srcclr.com/property-based-testing-for-java/) methods. We also looked at [Pathgrind](https://github.com/codelion/pathgrind), a tool for [dynamic symbolic execution](https://blog.srcclr.com/dynamic-symbolic-execution-with-pathgrind/) that can be used for automated fuzzing of binaries. Continuing on the same theme, in this article we will look at how grammar-based test case generation works in practice. We also present a new tool - [Gramtest](https://github.com/codelion/gramtest). Gramtest allows you to generate test cases based on arbitrary user defined grammars. Potential applications of the tool include automated fuzzing and testing.
 

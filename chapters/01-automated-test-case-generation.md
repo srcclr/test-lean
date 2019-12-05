@@ -1,4 +1,4 @@
-# Automated Test Case Generation
+# Beyond Unit Tests: Automated Test Case Generation
 
 Unit testing is an important aspect of software development. Having a proper test suite for your project can help detect bugs early and prevent regressions. Wouldn't it be great if we could generate unit test cases automatically? Well, it is certainly possible and I will explain in this article how you can do so for Java.
 
