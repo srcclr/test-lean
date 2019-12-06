@@ -151,11 +151,11 @@ This gives us the following table:
 
 |       | I | C | D | U | M |
 |-------|---|---|---|---|---|
-| **I** | ⊥ | I | M | I | ⊥ |
-| **C** | ⊥ | C | D | C | ⊥ |
-| **D** | C | ⊥ | ⊥ | ⊥ | D |
-| **U** | ⊥ | C | D | U | ⊥ |
-| **M** | I | ⊥ | ⊥ | ⊥ | M |
+| **I** | $\bot$ | I | M | I | $\bot$ |
+| **C** | $\bot$ | C | D | C | $\bot$ |
+| **D** | C | $\bot$ | $\bot$ | $\bot$ | D |
+| **U** | $\bot$ | C | D | U | $\bot$ |
+| **M** | I | $\bot$ | $\bot$ | $\bot$ | M |
 
 We are also in a better position now to think about our earlier definitions:
 
@@ -180,9 +180,9 @@ Implementing this change gives us the following table.
 
 |       | I | C | D | ? |
 |-------|---|---|---|---|
-| **I** | ⊥ | I | ? | I |
-| **C** | ⊥ | C | D | C |
-| **D** | C | ⊥ | ⊥ | D |
+| **I** | $\bot$ | I | ? | I |
+| **C** | $\bot$ | C | D | C |
+| **D** | C | $\bot$ | $\bot$ | D |
 | **?** | I | C | D | ? |
 
 More details are available in our [FSE2018 paper](https://asankhaya.github.io/pdf/Efficient-Static-Checking-of-Library-Updates.pdf).
