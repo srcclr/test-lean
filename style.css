@@ -20,6 +20,14 @@ pre {
   overflow-x: scroll;
 }
 
+/* Inline code snippets (backticks) */
+p > code {
+  background-color: white;
+  border: solid rgba(68, 68, 68, .5) 1px; /* 44 in hex; to set opacity */
+  padding: 1px 3px;
+  border-radius: 4px;
+}
+
 a {
   border-bottom: 1px solid #444444;
   color: #444444;
