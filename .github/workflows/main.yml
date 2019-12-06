@@ -7,8 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Build
-      uses: dariusf/pandoc-publish@master
+    - uses: dariusf/pandoc-publish@master
+    - uses: dariusf/kindlegen@master
+      with:
+        path: build/epub/oct-wave.epub
     - uses: actions/upload-artifact@master
       with:
         name: oct-wave.pdf
@@ -17,6 +19,10 @@ jobs:
       with:
         name: oct-wave.epub
         path: build/epub/oct-wave.epub
+    - uses: actions/upload-artifact@master
+      with:
+        name: oct-wave.mobi
+        path: build/epub/oct-wave.mobi
     - uses: maxheld83/ghpages@v0.2.1
       env:
         BUILD_DIR : build/html
