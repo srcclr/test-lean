@@ -132,11 +132,11 @@ CVSS also defines a [means](https://www.first.org/cvss/v2/guide#3-2-Equations) o
  */
 @Property
 public void temporalScoreRange(BaseVector baseVector, TemporalVector temporalVector) throws ParseException {
-    double temporalScore = temporalVector.getScore(baseVector);
-    assertTrue(0 <= temporalScore && temporalScore <= 10);
-    assertTrue(temporalScore <= baseVector.getScore());
-    double baseScoreThreshold = baseVector.getScore() * (1 - 0.33);
-    assertTrue(temporalScore <= baseScoreThreshold);
+    double temporal = temporalVector.getScore(baseVector);
+    assertTrue(0 <= temporal && temporal <= 10);
+    assertTrue(temporal <= baseVector.getScore());
+    double baseThreshold = baseVector.getScore() * (1 - 0.33);
+    assertTrue(temporal <= baseThreshold);
 }
 
 ```
@@ -150,15 +150,15 @@ Args: [AV:A/AC:L/Au:N/C:P/I:P/A:N, E:H/RL:OF/RC:UR]
 
 Our first thought is that the implementation is wrong in some way. Perhaps floating-point error? We check [two](https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator) [other](https://bit-sentinel.com/common-vulnerability-scoring-system-cvss-2-0-online-calculator/) implementations of CVSS2 scoring and see the same result: a base score of 4.8, a temporal score of 4.0, and the impossible assertion `4.0 < 4.8 * (1-0.33)`.
 
-The answer comes from looking at the temporal equation analytically. The minimum temporal score is (modulo rounding):
+Looking at the temporal equation analytically, we see that the minimum temporal score is:
 
 ```
 temporal = base * min(exploitability) * min(remediationLevel) * min(reportConfidence)
          = base * 0.85 * 0.87 * 0.9
-         = base * 0.66555
+         = base * 0.67 (2 d.p.)
 ```
 
-In other words, "33% lower than the base score" is the lower bound. Clearly the spec should have said **no smaller than**, i.e. `base * (1-0.33) <= temporal <= base`. Note also the inconsistent uses of _higher_ and _greater_, and the difficulty of parsing that sentence in general; issues like these illustrate why natural language should be kept to a minimum in specifications.
+In other words, "33% lower than the base score" is the _lower bound_. Clearly the spec should have said **no smaller than**, i.e. `base * (1-0.33) <= temporal <= base`. Note also the inconsistent uses of _higher_ and _greater_, and the difficulty of parsing that sentence in general; issues like these illustrate why natural language should be kept to a minimum in specifications.
 
 We continue transcribing and testing, and find a similar error in the computation for the environmental score.
 
