@@ -134,24 +134,24 @@ Now, we will examine some practical tips to keep in mind while implementing gram
 ## Implementation
 The key aspect of the grammar-based test case generation algorithm in Gramtest is to follow all the production rules of the given BNF grammar and then generate strings that conform to the grammar. The production rules themselves form a tree, the root of the tree is the starting rule for generating all the strings in the grammar. For example, consider the following BNF grammar describing all the course codes at a university:
 
-```
-  <coursecode>   ::= <acadunit> <coursenumber>
-  <acadunit>     ::= <letter> <letter> <letter>
-  <coursenumber> ::= <year> <semesters> <digit> <digit>
-  <year>         ::= <ugrad> | <grad>
-  <ugrad>        ::= 0 | 1 | 2 | 3 | 4
-  <grad>         ::= 5 | 6 | 7 | 9
-  <semesters>    ::= <onesemester> | <twosemesters>
-  <onesemester>  ::= <frenchone> | <englishone> | <bilingual>
-  <frenchone>    ::= 5 | 7
-  <englishone>   ::= 1 | 3
-  <bilingual>    ::= 9
-  <twosemesters> ::= <frenchtwo> | <englishtwo>
-  <frenchtwo>    ::= 6 | 8
-  <englishtwo>   ::= 2 | 4
-  <digit>        ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-  <letter>       ::= A | B | C | D | E | F | G | H | I | J | K | L | M | N |
-                     O | P | Q | R | S | T | U | V | W | X | Y | Z
+```html
+<coursecode>   ::= <acadunit> <coursenumber>
+<acadunit>     ::= <letter> <letter> <letter>
+<coursenumber> ::= <year> <semesters> <digit> <digit>
+<year>         ::= <ugrad> | <grad>
+<ugrad>        ::= 0 | 1 | 2 | 3 | 4
+<grad>         ::= 5 | 6 | 7 | 9
+<semesters>    ::= <onesemester> | <twosemesters>
+<onesemester>  ::= <frenchone> | <englishone> | <bilingual>
+<frenchone>    ::= 5 | 7
+<englishone>   ::= 1 | 3
+<bilingual>    ::= 9
+<twosemesters> ::= <frenchtwo> | <englishtwo>
+<frenchtwo>    ::= 6 | 8
+<englishtwo>   ::= 2 | 4
+<digit>        ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<letter>       ::= A | B | C | D | E | F | G | H | I | J | K | L | M | N |
+                   O | P | Q | R | S | T | U | V | W | X | Y | Z
 ```
 
 In this grammar the rule `<coursecode> ::= <acadunit> <coursenumber>` is at the root. In order to generate the strings in this grammar, we follow all the rules starting from the root (going from top to bottom) to a terminal. When we reach a terminal, we generate a string corresponding to that terminal. For rules that contain alternatives we need to follow all the alternate branches generating strings in an exhaustive manner. Thus, when we run Gramtest on this input it generates the following strings:
@@ -187,7 +187,7 @@ This simple algorithm based on exhaustive search over the production rules guara
 
 In general, a given BNF grammar can contain infinitely many strings due to the recursive nature of the production rules. Recall the following grammar for arithmetic expressions from our [previous article](https://blog.srcclr.com/how-does-grammar-based-test-case-generation-work/):
 
-```
+```html
 <expression>  ::=   <term> <addOps> <expression> | <term>
 <term>        ::=   <factor> <multOps> <term> | <factor>
 <addOps>      ::=   + | -
@@ -279,7 +279,33 @@ By using all the three tips we get a tool that is more useful and has practical 
 
 Next we will see how you can use GramTest to generate continuous tests that can in-turn be used to fuzz Java libraries and applications.
 
-![Partial grammar for URLs](https://srcclr.github.io/oct-wave/images/url-grammar.png)
+```html
+<url> ::=   <httpaddress> | <ftpaddress> | <newsaddress> | <nntpaddress> |
+      <prosperoaddress> | <telnetaddress> | <gopheraddress> | <waisaddress> | 
+      <mailtoaddress>
+
+<httpaddress> ::= h t t p : / / <hostport> [/ <path>] [? <search>]
+
+<ftpaddress> ::=  f t p : / / <login> / <path> [; <ftptype>]
+
+<newsaddress> ::= n e w s : <groupart>
+
+<nntpaddress> ::=   n n t p : <group> / <digits>
+
+<telnetaddress> ::=  t e l n e t : / / <login>
+
+<gopheraddress> ::=  g o p h e r : / / <hostport> [/ <gtype> [<gcommand>]]
+      
+<mailtoaddress> ::=  m a i l t o : <xalphas> @ <hostname>
+
+<waisaddress> ::= <waisindex> | <waisdoc>
+
+<waisindex> ::=   w a i s : / / <hostport> / <database> [? <search>]
+
+<waisdoc> ::=   w a i s : / / <hostport> / <database> / <wtype> / <wpath>
+
+<wpath>   ::=   <digits> = <path> ; [<wpath>]
+```
 
 As an example we will use the grammar for URLs as defined in [rfc1738](https://tools.ietf.org/html/rfc1738). Part of the grammar is shown above and as you can see, it if fairly complex. If you directly run GramTest from command line using this grammar as input you will get some interesting test cases:
 
@@ -298,30 +324,30 @@ gopher://T53
 
 This is good for test case generation but not ideal if you want to run a long fuzzing session with some library or application. For doing continuous fuzzing you can use GramTest as a library very easily. The [`TestRunner`](https://github.com/codelion/gramtest/blob/master/src/main/java/com/sourceclear/gramtest/TestRunner.java) class provided in GramTest makes it easy to integrate with any application for fuzzing. You can even implement it as part of a test case:
 
-```
-  /**
-   * Test with url grammar
-   * @throws java.io.IOException
-   */
-  @Test
-  @Ignore("Non terminating test case")
-  public void testQueueGenerator() throws IOException, InterruptedException {
-    final BlockingQueue<String> queue = new SynchronousQueue<>();
-    TestRunner continuousRunner = new TestRunner(getClass().getResourceAsStream("/url.bnf"), queue, 10, 8, 32);
-    new Thread(continuousRunner).start();
-    consumeTests(queue);
-  }
+```java
+/**
+ * Test with url grammar
+ * @throws java.io.IOException
+ */
+@Test
+@Ignore("Non terminating test case")
+public void testQueueGenerator() throws IOException, InterruptedException {
+  final BlockingQueue<String> queue = new SynchronousQueue<>();
+  TestRunner continuousRunner = new TestRunner(getClass().getResourceAsStream("/url.bnf"), queue, 10, 8, 32);
+  new Thread(continuousRunner).start();
+  consumeTests(queue);
+}
 
-  private void consumeTests(BlockingQueue queue) throws InterruptedException {
-    while(true) {
-      String testCase = (String) queue.take();
-      try {
-        URL.parse(testCase);
-      } catch (URLParseException e) {
-        System.out.println(testCase);
-      }
+private void consumeTests(BlockingQueue<String> queue) throws InterruptedException {
+  while (true) {
+    String testCase = queue.take();
+    try {
+      URL.parse(testCase);
+    } catch (URLParseException e) {
+      System.out.println(testCase);
     }
   }
+}
 ```
 
 Just pass the BNF grammar file as  input and a `BlockingQueue` to read the generated tests. The queue just makes it easy to add multiple consumers that can each run in their own thread in parallel. This will allow you to run long fuzzing sessions against a target Java library or application. In fact with this exact set up and the given URL input grammar, GramTest found [a bug](https://issues.apache.org/jira/browse/VALIDATOR-410) in the Apache Commons URL validator. 
