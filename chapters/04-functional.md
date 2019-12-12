@@ -1,4 +1,4 @@
-# Don't Just Move User Stores to Done, Let's Execute Them!
+# Execute Your User Stories!
 
 ## Let's build something!
 
