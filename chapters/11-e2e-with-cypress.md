@@ -12,7 +12,13 @@ Frontend engineers are increasingly becoming more involved in writing integratio
 
 Being able to run inside the browser means our tests run in the same loop as our application. This translates to better debug-ability. Cypress provides `debug()` and a way of handling `debugger` command and allows us to inspect with browser dev tools. Consider the following simple example:
 
-We want a tab containing the text “Released” to be selected when a variable `releaseStatus` is set to `RELEASED`. Cypress lets us walk through the different commands and assertions and allows us to “time travel” to see how the interface looks like including how the markups and styles are rendered at certain points in time. This level of control and transparency surfaces significant information for our engineers when evaluating our tests which prove to be handy in implementing or addressing issues. Cypress also provides tools to easily trace where the test fails such as automatic screenshot or video recording. 
+![Cypress](https://srcclr.github.io/oct-wave/images/cypress-screenshot.png)
+
+We want a tab containing the text “Released” to be selected when a variable `releaseStatus` is set to `RELEASED`. Cypress lets us walk through the different commands and assertions and allows us to “time travel” to see how the interface looks like including how the markups and styles are rendered at certain points in time. Clicking on the `FIND` command as shown the previous screenshot yields the following in the devtools console:
+
+![Cypress-in-Console](https://srcclr.github.io/oct-wave/images/cypress-in-console.png)
+
+This level of control and transparency surfaces significant information for our engineers when evaluating our tests which prove to be handy in implementing or addressing issues. Cypress also provides tools to easily trace where the test fails such as automatic screenshot or video recording. 
 
 #### Expressiveness
 
