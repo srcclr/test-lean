@@ -8,7 +8,7 @@ This book captures the essence of engineering at SourceClear. It is a collection
 1. [Beyond Unit Tests: Automated Test Case Generation](chapters/01-automated-test-case-generation.md)
 1. [Beyond Unit Tests: Property-based Testing](chapters/02-property-based-testing.md)
 1. [GramTest: a tool for grammar-based test case generation](chapters/grammar.md)
-1. Feature testing of command-line interfaces with Aruba
+1. [Execute Your User Stories!](chapters/04-functional.md)
 1. [Where is my cassette? Mocking system testing using capture and replay](chapters/03-where-is-my-casette.md)
 1. [Contract testing with Pact](chapters/05-contract.md)
 1. [Proof Pearl: On the Correctness of Update Advisor](chapters/07-update-advisor.md)
