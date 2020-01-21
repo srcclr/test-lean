@@ -1,9 +1,4 @@
-# Oct Wave: The Software Engineering Zeitgeist
-
-**zeitgeist** _/ˈzʌɪtɡʌɪst/_ (noun):
-_the defining spirit or mood of a particular period of history as shown by the ideas and beliefs of the time._
-
-This book captures the essence of engineering at SourceClear. It is a collection of essays & articles on the following topics:
+# Test Lean and Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World
 
 1. Introduction
 2. [Beyond Unit Tests: Automated Test Case Generation](chapters/01-automated-test-case-generation.md)
@@ -19,14 +14,5 @@ This book captures the essence of engineering at SourceClear. It is a collection
 12. [Dynamic Symbolic Execution with Pathgrind](chapters/08-symbolic.md)
 13. [EFDA: a benchmark for software composition analysis tools](chapters/09-efda.md)
 14. Perspectives
-
-<!--
-- Introduction - Darius
-- Test containers - Jason Yeo
-- Monitoring as testing (sentry) - Hendy + Jonah
-- Feature flags, dark releases, canary deployments - Jonathan + Spencer
-- Test case selection for the lazy - Tian You
-- How to measure the impact of tests? - Srini + Subashree
--->
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
