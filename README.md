@@ -9,10 +9,11 @@
 7. Test Containers
 8. [E2E with Cypress](chapters/10-cypress.md)
 9. Monitoring as Testing
-10. [Proof Pearl: On the Correctness of Update Advisor](chapters/07-update-advisor.md)
-11. [GramTest: a tool for grammar-based test case generation](chapters/grammar.md)
-12. [Dynamic Symbolic Execution with Pathgrind](chapters/08-symbolic.md)
-13. [EFDA: a benchmark for software composition analysis tools](chapters/09-efda.md)
-14. Perspectives
+10. Chaos Engineering
+11. [Proof Pearl: On the Correctness of Update Advisor](chapters/07-update-advisor.md)
+12. [GramTest: a tool for grammar-based test case generation](chapters/grammar.md)
+13. [Dynamic Symbolic Execution with Pathgrind](chapters/08-symbolic.md)
+14. [EFDA: a benchmark for software composition analysis tools](chapters/09-efda.md)
+15. Perspectives
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
