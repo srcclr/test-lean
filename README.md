@@ -1,5 +1,15 @@
 # Test Lean and Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World
 
+## Test Lean Principles
+
+- Complete automation over manual testing
+- Early error detection over end-to-end testing
+- Monitoring and recovery over exhaustive testing
+- Increasing confidence in delivery over bug finding
+
+
+## Table of Contents
+
 1. Introduction
 2. [Beyond Unit Tests: Automated Test Case Generation](chapters/01-automated-test-case-generation.md)
 3. [Beyond Unit Tests: Property-based Testing](chapters/02-property-based-testing.md)
