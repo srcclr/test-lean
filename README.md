@@ -1,4 +1,4 @@
-# Test Lean and Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World
+# Test Lean & Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World
 
 ## Test Lean Principles
 
