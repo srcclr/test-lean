@@ -1,12 +1,17 @@
 # Test Lean & Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World
 
-## Test Lean Principles
+## Principles
+
+![Test Lean Principles](https://i.imgur.com/N8wwFhp.gif)
 
 - Complete automation over manual testing
 - Early error detection over end-to-end testing
 - Monitoring and recovery over exhaustive testing
 - Increasing confidence in delivery over bug finding
 
+## Presentation @ TAQELAH
+
+[![Test Lean and Ship Healthy Webinar](http://img.youtube.com/vi/sqtmcYKpy-A/0.jpg)](http://www.youtube.com/watch?v=sqtmcYKpy-A)
 
 ## Table of Contents
 
