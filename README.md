@@ -19,15 +19,15 @@
 2. [Beyond Unit Tests: Automated Test Case Generation](chapters/01-automated-test-case-generation.md)
 3. [Beyond Unit Tests: Property-based Testing](chapters/02-property-based-testing.md)
 4. [Execute Your User Stories!](chapters/04-functional.md)
-5. [Where is my cassette? Mocking system testing using capture and replay](chapters/03-where-is-my-casette.md)
-6. [Contract testing with Pact](chapters/05-contract.md)
+5. [Where is my cassette? Mocking system testing using capture and replay](chapters/05-where-is-my-casette.md)
+6. [Contract testing with Pact](chapters/06-contract.md)
 7. Test Containers
 8. [E2E with Cypress](chapters/10-cypress.md)
 9. Monitoring as Testing
 10. Chaos Engineering
 11. Performance Testing
 12. [Proof Pearl: On the Correctness of Update Advisor](chapters/07-update-advisor.md)
-13. [GramTest: a tool for grammar-based test case generation](chapters/grammar.md)
+13. [GramTest: a tool for grammar-based test case generation](chapters/13-grammar.md)
 14. [Dynamic Symbolic Execution with Pathgrind](chapters/08-symbolic.md)
 15. [EFDA: a benchmark for software composition analysis tools](chapters/09-efda.md)
 16. Perspectives
