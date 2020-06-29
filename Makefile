@@ -22,7 +22,6 @@ book:	epub pdf html
 honkit:
 	npm ci
 	npm run honkit -- build
-	npm run honkit -- pdf . book.pdf
 	npm run honkit -- epub . book.epub
 	npm run honkit -- mobi . book.mobi
 

@@ -43,10 +43,6 @@ jobs:
       with:
         name: book.epub
         path: book.epub
-    - uses: actions/upload-artifact@master
-      with:
-        name: book.pdf
-        path: book.pdf
 
     - uses: maxheld83/ghpages@v0.2.1
       env:
