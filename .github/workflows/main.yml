@@ -8,9 +8,13 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: dariusf/pandoc-publish@master
+    - uses: dariusf/honkit-publish@master
+      with:
+        target: honkit
     - uses: dariusf/kindlegen@master
       with:
         path: build/epub/oct-wave.epub
+
     - uses: actions/upload-artifact@master
       with:
         name: oct-wave.pdf
@@ -23,7 +27,25 @@ jobs:
       with:
         name: oct-wave.mobi
         path: build/epub/oct-wave.mobi
+    - uses: actions/upload-artifact@master
+      with:
+        name: oct-wave.mobi
+        path: build/epub/oct-wave.mobi
+
+    - uses: actions/upload-artifact@master
+      with:
+        name: book.mobi
+        path: book.mobi
+    - uses: actions/upload-artifact@master
+      with:
+        name: book.epub
+        path: book.epub
+    - uses: actions/upload-artifact@master
+      with:
+        name: book.pdf
+        path: book.pdf
+
     - uses: maxheld83/ghpages@v0.2.1
       env:
-        BUILD_DIR : build/html
+        BUILD_DIR : _book
         GH_PAT: ${{ secrets.GH_PAT }}

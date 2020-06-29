@@ -19,6 +19,12 @@ all:	book
 
 book:	epub pdf html
 
+honkit:
+	honkit build .
+	honkit pdf . book.pdf
+	honkit epub . book.epub
+	honkit mobi . book.mobi
+
 clean:
 	rm -r $(BUILD)
 
