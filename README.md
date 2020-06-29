@@ -2,7 +2,7 @@
 
 ## Principles
 
-![Test Lean Principles](https://i.imgur.com/N8wwFhp.gif)
+![Test Lean Principles](images/principles.gif)
 
 - Complete automation over manual testing
 - Early error detection over end-to-end testing
