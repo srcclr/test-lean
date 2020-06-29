@@ -1,0 +1,13 @@
+{
+  "name": "test-lean",
+  "version": "1.0.0",
+  "scripts": {
+    "honkit": "honkit"
+  },
+  "author": "dariusf",
+  "license": "MIT",
+  "devDependencies": {
+    "gitbook-plugin-mathjax": "git://github.com/dariusf/plugin-mathjax.git",
+    "honkit": "^3.4.0"
+  }
+}

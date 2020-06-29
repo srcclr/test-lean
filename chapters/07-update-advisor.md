@@ -149,7 +149,6 @@ compose Unchanged Unchanged = Unchanged -- only thing that makes sense
 
 This gives us the following table:
 
-<div style="width: 25%; margin: 0 auto;">
 |       | I | C | D | U | M |
 |-------|---|---|---|---|---|
 | **I** | $\bot$ | I | M | I | $\bot$ |
@@ -157,7 +156,6 @@ This gives us the following table:
 | **D** | C | $\bot$ | $\bot$ | $\bot$ | D |
 | **U** | $\bot$ | C | D | U | $\bot$ |
 | **M** | I | $\bot$ | $\bot$ | $\bot$ | M |
-</div>
 
 We are also in a better position now to think about our earlier definitions:
 
@@ -180,14 +178,12 @@ It turns out that we can conflate U and M into a single operation, _unknown_ (?)
 
 Implementing this change gives us the following table.
 
-<div style="width: 25%; margin: 0 auto;">
 |       | I | C | D | ? |
 |-------|---|---|---|---|
 | **I** | $\bot$ | I | ? | I |
 | **C** | $\bot$ | C | D | C |
 | **D** | C | $\bot$ | $\bot$ | D |
 | **?** | I | C | D | ? |
-</div>
 
 More details are available in our [FSE2018 paper](https://asankhaya.github.io/pdf/Efficient-Static-Checking-of-Library-Updates.pdf).
 

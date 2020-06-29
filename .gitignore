@@ -3,3 +3,4 @@ _book
 *.mobi
 *.epub
 *.pdf
+node_modules
