@@ -1,1 +1,5 @@
 build/
+_book
+*.mobi
+*.epub
+*.pdf
