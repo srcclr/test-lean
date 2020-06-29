@@ -26,7 +26,7 @@ Using test frameworks and assertion libraries with APIs that are expressive impr
 
 In the following example, we can easily follow and understand the flow being tested — we visit  `http://localhost:3000` , attempt to login with email and password. Then, URL in the address bar should include a `session` parameter. 
 
-```
+```js
 it('logs in',()=>{
 	cy.visit('http://localhost:3000');
 
@@ -50,7 +50,7 @@ As with any modern web apps, many interactions are implemented to be asynchronou
 
 We address flaky tests with Cypress’ built-in wait and retry-ability that come by defaul. Let’s take a look at the following:
 
-```
+```js
 it('should select Libraries tab by default',()=>{
 	cy.visit('http://localhost:3000/items'); 
 

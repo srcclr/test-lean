@@ -6,11 +6,11 @@ Recently, I had a chance to look at unit test case generation for Java. I had fo
 
 After searching online, I found an automated test suite generation framework for Java - [EvoSuite](http://www.evosuite.org/). The EvoSuite framework automatically generates test cases for Java classes based on maximizing a coverage criteria, like branch coverage. I used their standalone jar to add a test suite to the wox library. It was surprisingly easy to set up and use.
 
-In order to generate the test suite we use the following command : 
+In order to generate the test suite we use the following command:
 
-````
+```sh
 java -jar evosuite.jar -generateTests <target> [options]
-````
+```
 
 The **\<target>** can be either a jar file of a folder containing your class files. This would generate the test cases in a folder named "evosuite-tests" in the current directory.
 The test cases generated use JUnit and can be run separately from an IDE as well.
@@ -27,7 +27,7 @@ Their [ASE 2011 paper](http://www.evosuite.org/wp-content/papercite-data/pdf/ase
 
 In terms of the quality of the automated generated test cases, it seems to do a good job of capturing the current behavior of the methods while providing good branch coverage. As an example consider the following method from the **wox.serial.Util** class :
 
-````
+```java
  /**
      * Returns true if the class which name is passed as parameter is <i>stringable</i>.
      * In other words, returns true if objects of the class can go easily to a string
@@ -49,11 +49,11 @@ In terms of the quality of the automated generated test cases, it seems to do a 
             return false;
         }
     }
-````
+```
 
 The **stringable** method has two branches that correspond to whether the input **name** can be converted to a string by the **mapWOXToJava.get** method. EvoSuite generates the following two test cases for this method. **test02** covers the branch where the conditional is true whole **test03** covers the else branch. Also note that it is automatically able to create the inputs for **name** argument that drive the execution to the different branches.
 
-````
+```java
   //Test case number: 2
   /*
    * 1 covered goal:
@@ -77,7 +77,7 @@ The **stringable** method has two branches that correspond to whether the input 
       boolean boolean0 = Util.stringable("2p8f2V@rzS");
       assertEquals(false, boolean0);
   }
-````
+```
 
 You can have a look at the entire test suite generated for the wox library at the [GitHub repo](https://github.com/codelion/wox/tree/master/java/evosuite-tests/wox/serial). For the purpose of creating a regression test suite for a library that did not have one it seems to be quite effective. Now, if I make some changes in the wox library I can run the tests again and check if leads to any test failures. In general, automated test cases may not be as good as hand written ones. Another potential issue is the evolution of the test suite. Generating new tests with EvoSuite for each release may not be the right thing to do. Nevertheless the automated test suite can be used as a base for writing your own more comprehensive test cases, which is what I plan to do with the wox library.
 
