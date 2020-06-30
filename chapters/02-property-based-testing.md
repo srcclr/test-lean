@@ -87,7 +87,7 @@ AV:A/AC:L/Au:N/C:P/I:P/A:C/E:ND/RL:OF/RC:ND/CDP:H/TD:M/CR:ND/IR:ND/AR:H
 
 Vectors are structured, consisting of several _metric groups_.
 
-![](images/cvss-metric-groups.png)
+![CVSS metric groups](/images/cvss-metric-groups.png)
 
 Furthermore, there are many rules governing the relationships between metric groups and values, [specified informally](https://www.first.org/cvss/v2/guide). Both of these make it a prime candidate for property-based testing.
 

@@ -49,7 +49,7 @@ z0 = 2
 
 We can now repeat the same process with these new inputs and carry on the symbolic execution of the program one path at a time. This kind of symbolic path exploration can be visualized with the following execution tree for the `max` method.
 
-![Execution Tree for max method](images/ExecutionTree.png)
+![Execution Tree for max method](/images/ExecutionTree.png)
 
 Each input that is discovered leads to covering of another subsequent path in the tree. In this case, there are only 3 distinct paths in the program, so just 3 path conditions are required to explore all the paths in the program. For methods without loops or recursion the path exploration is always finite and terminating. However, in general in the presence of loops and recursion a program may potentially have unbounded number of paths. Exploring a program by exhaustively testing all paths in the program can lead to exponential number of test cases. This problem is commonly referred as path explosion, and is one of the limitations of symbolic execution. In order address this limitation, most tools support setting up a fixed depth until which the execution tree is explored and the path exploration process terminates after that depth. A similar strategy is used in pathgrind which we will look at in the next section.
 
@@ -95,10 +95,10 @@ The output of running pathgrind is shown above. The execution starts with file `
 
 For the simple test program the fuzzing process terminates in a few seconds, but for more realistic programs of interest like a browser (or the libPNG library) the process can take hours or even days to find some interesting case of failure. This is primarily due to problem of path explosion as mentioned earlier. If we want to see the time taken to execute each path condition we need to install [bokeh](http://bokeh.pydata.org/en/latest/) a Python-based framework for data visualization and just use `plotfuzz.py test`. It will launch the browser and show a running plot of the time taken to solve each formula and the time taken for path exploration (generating new formula).
 
-![Path Exploration Time Taken](images/PathExplosion.png)
+![Path Exploration Time Taken](/images/PathExplosion.png)
 
 The green line is the time taken in solving the constraint while the blue line shows the time taken in generating new constraints. As is clear from the graph, the time taken to generate new constraints is much larger than the time taken by the external solver (in this case STP) to solve them. I gave a talk on "Visualizing Symbolic Execution with Bokeh" at [PyData Singapore](https://twitter.com/pydatasg) earlier this year on this topic. The [slides](http://asankhaya.github.io/ppt/PyDataSing.pptx) of the presentation contain more examples on how to visualize some of the issues with path explosion in symbolic execution. For instance, if we implement the path exploration of loops in a naive way we will have lots of paths which are similar to each other that represent the unwinding of the loop. The following scatter plot shows what this looks like.
 
-![Path Similarity](images/PathSimilarity.png)
+![Path Similarity](/images/PathSimilarity.png)
 
 The size of the dot in the plot depicts the similarity (larger is more similar). All the dots from number 1 to 40 are very similar to each other and represent paths that are not interesting as they come by exploring loop unwinding. Techniques to address such limitations of symbolic execution are beyond the scope of this article and are a topic of active research in this area. With that we have come to the end of this article, more details about how to optimize path exploration with pathgrind can be found in the paper on [Exploiting undefined behaviors for efficient symbolic execution](http://asankhaya.github.io/research.html#EUB). In addition, to learn more about the path conditions, differences between various symbolic execution engines and solvers you can check out the following paper on [An Empirical Study of Path Feasibility Queries](http://arxiv.org/abs/1302.4798). If you run into any issues running Pathgrind feel free to submit an issue on the [GitHub repo](https://github.com/codelion/pathgrind) or send in your pull request.
