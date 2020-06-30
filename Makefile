@@ -13,7 +13,7 @@ MATH_FORMULAS = --webtex
 CSS_FILE = style.css
 CSS_ARG = --css=$(CSS_FILE)
 METADATA_ARG = --metadata-file=$(METADATA)
-ARGS = $(TOC) $(MATH_FORMULAS) $(CSS_ARG) $(METADATA_ARG)
+ARGS = $(TOC) $(MATH_FORMULAS) $(CSS_ARG) $(METADATA_ARG) --lua-filter=absolute-links.lua
 
 all:	book
 
