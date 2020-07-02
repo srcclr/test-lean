@@ -15,7 +15,7 @@
 
 ## Table of Contents
 
-1. Introduction
+1. [Introduction](chapters/00-introduction.md)
 2. [Beyond Unit Tests: Automated Test Case Generation](chapters/01-automated-test-case-generation.md)
 3. [Beyond Unit Tests: Property-based Testing](chapters/02-property-based-testing.md)
 4. [Execute Your User Stories!](chapters/04-functional.md)
