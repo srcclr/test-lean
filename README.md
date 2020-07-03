@@ -23,7 +23,7 @@
 6. [Contract testing with Pact](chapters/06-contract.md)
 7. Test Containers
 8. [E2E with Cypress](chapters/10-cypress.md)
-9. Monitoring as Testing
+9. [Monitoring as Testing](chapters/09-monitoring.md)
 10. Chaos Engineering
 11. Performance Testing
 12. [Proof Pearl: On the Correctness of Update Advisor](chapters/07-update-advisor.md)
