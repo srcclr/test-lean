@@ -8,7 +8,7 @@
 - [Contract testing with Pact](chapters/06-contract.md)
 - Test Containers
 - [E2E with Cypress](chapters/10-cypress.md)
-- Monitoring as Testing
+- [Monitoring as Testing](chapters/09-monitoring.md)
 - [Proof Pearl: On the Correctness of Update Advisor](chapters/07-update-advisor.md)
 - [GramTest: a tool for grammar-based test case generation](chapters/13-grammar.md)
 - [Dynamic Symbolic Execution with Pathgrind](chapters/08-symbolic.md)
