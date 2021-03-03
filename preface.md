@@ -1,6 +1,8 @@
 
 # Test Lean & Ship Healthy: A Handbook on Delivering High Quality Software in the DevOps World
 
+<img alt="Test Lean & Ship Healthy Book Cover" style="width:256px;" src="images/cover.png" />
+
 Shipping code on time is key to delivering a successful software product. However, increasing velocity at the cost of quality ("move fast and break things") is unsustainable beyond a certain point, and a non-starter in domains where availability and correctness are paramount, such as an application security product.
 
 In this book, we outline a strategy for keeping both velocity and quality high: employing a mix of testing strategies, building quality into the development and deployment proces, and automating as much as possible.
