@@ -14,9 +14,9 @@ jobs:
     - uses: dariusf/honkit-publish@master
       with:
         target: honkit
-    - uses: dariusf/kindlegen@master
-      with:
-        path: build/epub/oct-wave.epub
+    #- uses: dariusf/kindlegen@master
+    #  with:
+    #    path: build/epub/oct-wave.epub
 
     - uses: actions/upload-artifact@master
       with:
