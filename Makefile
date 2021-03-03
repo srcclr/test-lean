@@ -7,7 +7,7 @@ CHAPTERS = chapters/*.md
 TOC = --toc --toc-depth=2
 IMAGES_FOLDER = images
 IMAGES = $(IMAGES_FOLDER)/*
-COVER_IMAGE = $(IMAGES_FOLDER)/cover.jpg
+COVER_IMAGE = $(IMAGES_FOLDER)/cover.png
 LATEX_CLASS = report
 MATH_FORMULAS = --webtex
 CSS_FILE = style.css
