@@ -26,14 +26,14 @@ jobs:
       with:
         name: oct-wave.epub
         path: build/epub/oct-wave.epub
-    - uses: actions/upload-artifact@master
-      with:
-        name: oct-wave.mobi
-        path: build/epub/oct-wave.mobi
-    - uses: actions/upload-artifact@master
-      with:
-        name: oct-wave.mobi
-        path: build/epub/oct-wave.mobi
+    #- uses: actions/upload-artifact@master
+    #  with:
+    #    name: oct-wave.mobi
+    #    path: build/epub/oct-wave.mobi
+    #- uses: actions/upload-artifact@master
+    #  with:
+    #    name: oct-wave.mobi
+    #    path: build/epub/oct-wave.mobi
 
     - uses: actions/upload-artifact@master
       with:
