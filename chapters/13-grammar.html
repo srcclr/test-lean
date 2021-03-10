@@ -1,0 +1,626 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GramTest: a tool for grammar-based test case generation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="08-symbolic.html" />
+    
+    
+    <link rel="prev" href="07-update-advisor.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GramTest: a tool for grammar-based test case generation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="gramtest-a-tool-for-grammar-based-test-case-generation">GramTest: a tool for grammar-based test case generation</h1><p>In a series of previous articles, we learnt about <a href="https://blog.srcclr.com/automated-unit-test-generation-for-java/" target="_blank">automated unit test generation</a> using search-based and <a href="https://blog.srcclr.com/property-based-testing-for-java/" target="_blank">property-based</a> methods. We also looked at <a href="https://github.com/codelion/pathgrind" target="_blank">Pathgrind</a>, a tool for <a href="https://blog.srcclr.com/dynamic-symbolic-execution-with-pathgrind/" target="_blank">dynamic symbolic execution</a> that can be used for automated fuzzing of binaries. Continuing on the same theme, in this article we will look at how grammar-based test case generation works in practice. We also present a new tool - <a href="https://github.com/codelion/gramtest" target="_blank">Gramtest</a>. Gramtest allows you to generate test cases based on arbitrary user defined grammars. Potential applications of the tool include automated fuzzing and testing.</p><p>Several programs (like parsers, interpreters and compilers) that work on structured input can be tested using grammars. These applications process their input in different stages like tokenizing, building parse tree, converting to AST and evaluating the AST. For such applications, due to the large number of control flow paths in the early processing, random fuzzing does not yield good test cases. Generating tests that exploit the structured nature of the input can provide better results. The simplest way to provide specify the input is in from of context-free grammars.</p><h2 id="context-free-grammar">Context-free grammar</h2><p>A context-free grammar or CFG is a set of recursive rewriting rules (also called productions) used to generate patterns of strings. As an example, consider the following CFG for arithmetic expressions.</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span>  ::=   <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">addOps</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>        ::=   <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">multOps</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">addOps</span>&gt;</span>      ::=   + | -
+<span class="hljs-tag">&lt;<span class="hljs-name">multOps</span>&gt;</span>     ::=   * | /
+<span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>      ::=   &quot;(&quot; <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> &quot;)&quot; | <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>    ::=   0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</code></pre>
+<p>The above grammar captures the language of all strings using four operators (<code>+</code>,<code>-</code>,<code>*</code>,<code>/</code>) brackets (<code>(</code>,<code>)</code>) and numbers (0-9). The set of symbols that can appear in the strings generated by the grammar are called terminals. We can generate all the strings in the grammar by following the production rules. E.g. for generating the string <code>(1 + 2) * 3</code>, we can apply the following rules:</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">multiOps</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> ::= &quot;(&quot; <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> &quot;)&quot;
+            <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">addOps</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>    ::= <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> ::=    <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span> ::= 1
+                <span class="hljs-tag">&lt;<span class="hljs-name">addOps</span>&gt;</span> ::= +
+                <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>    ::= <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span> ::= 2
+        <span class="hljs-tag">&lt;<span class="hljs-name">multiOps</span>&gt;</span> ::= *
+        <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span> ::= 3</code></pre>
+<p>Each string in the grammar starts at the first symbol and then follows the production rules till it reaches a terminal symbol. The rules of the grammar as given above are said to be in <a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form" target="_blank">Backus-Naur Form</a> (or BNF). It is one of two main notation techniques used for representing context-free grammars. Once we have specified the input to a program in BNF, we can do test case generation by exhaustively applying all the production rules to generate strings. We present <a href="https://github.com/codelion/gramtest" target="_blank">Gramtest</a> a tool written in Java that can be used for this purpose.</p><h2 id="gramtest">Gramtest</h2><p>Gramtest is implemented using the <a href="http://www.antlr.org/" target="_blank">ANTLR4</a> parser generator. To specify the structure of the inputs used to generate tests we use the BNF grammar available from the <a href="https://github.com/antlr/grammars-v4/blob/master/bnf/bnf.g4" target="_blank">ANTLR repository</a>. In addition, there are some <a href="https://blog.srcclr.com/useful-maven-plugins-for-working-with-ANTLR-4-grammars/" target="_blank">useful Maven plugins</a> that we use for our development while working with the grammars. The BNF grammar allows us to recognize any language given in the BNF format. The syntax for BNF can itself be represented with a BNF as follows:</p><pre><code class="lang-html"> &lt;syntax&gt;         ::= &lt;rule&gt; | &lt;rule&gt; &lt;syntax&gt;
+ &lt;rule&gt;           ::= &lt;opt-whitespace&gt; &quot;&lt;&quot; &lt;rule-name&gt; &quot;&gt;&quot; &lt;opt-whitespace&gt;
+                                 &quot;::=&quot; &lt;opt-whitespace&gt; &lt;expression&gt; &lt;line-end&gt;
+ &lt;opt-whitespace&gt; ::= &quot; &quot; &lt;opt-whitespace&gt; | &quot;&quot;
+ &lt;expression&gt;     ::= &lt;list&gt; | &lt;list&gt; &quot;|&quot; &lt;expression&gt;
+ &lt;line-end&gt;       ::= &lt;opt-whitespace&gt; &lt;EOL&gt; | &lt;line-end&gt; &lt;line-end&gt;
+ &lt;list&gt;           ::= &lt;term&gt; | &lt;term&gt; &lt;opt-whitespace&gt; &lt;list&gt;
+ &lt;term&gt;           ::= &lt;literal&gt; | &quot;&lt;&quot; &lt;rule-name&gt; &quot;&gt;&quot;
+ &lt;literal&gt;        ::= &apos;&quot;&apos; &lt;text&gt; &apos;&quot;&apos; | &quot;&apos;&quot; &lt;text&gt; &quot;&apos;&quot;</code></pre>
+<p>The grammar for arithmetic expressions given in previous section fits in this syntax. To generate tests from a given BNF grammar we need to exhaustively enumerate all the strings in the grammar. The Gramtest tool makes it easy to do just that. To run the tool and generate test cases for the arithmetic expressions grammar, we just run the following on the command line:</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$ java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/arithexp.bnf
+
+Generating tests ...
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+0
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+1
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+2
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+3
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+4
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+5
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+6
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+7
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+8
+...</code></pre>
+<p>The &quot;-file&quot; command tells Gramtest to look for the input grammar in the file &quot;arithexp.bnf&quot;. By default the generated tests are printed on the screen. In case you want to save them to a folder to use with your program you can use the &quot;-tests&quot; option as follows:</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$ java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/arithexp.bnf -tests generated-tests
+
+Generating tests ...
+All tests have been saved in the generated-tests folder!</code></pre>
+<p>This will save all the test cases in the &quot;generated-tests&quot; folder.</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$ ls generated-tests/
+1.txt    17.txt    25.txt    33.txt    41.txt    5.txt    58.txt    66.txt    74.txt    82.txt    90.txt    99.txt
+10.txt    18.txt    26.txt    34.txt    42.txt    50.txt    59.txt    67.txt    75.txt    83.txt    91.txt
+100.txt    19.txt    27.txt    35.txt    43.txt    51.txt    6.txt    68.txt    76.txt    84.txt    92.txt
+11.txt    2.txt    28.txt    36.txt    44.txt    52.txt    60.txt    69.txt    77.txt    85.txt    93.txt
+...</code></pre>
+<p>The test cases can then be run with the target program for fuzzing and automated testing. As an another example, lets consider a BNF grammar for generating all strings that have the word &quot;main&quot; in them.</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">program</span>&gt;</span>   ::=   <span class="hljs-tag">&lt;<span class="hljs-name">letter*</span>&gt;</span> m a i n <span class="hljs-tag">&lt;<span class="hljs-name">letter*</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">letter*</span>&gt;</span>   ::=   { <span class="hljs-tag">&lt;<span class="hljs-name">letter</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">letter*</span>&gt;</span> }
+<span class="hljs-tag">&lt;<span class="hljs-name">letter</span>&gt;</span>    ::=   A | B | C | D | E | F | G | H | I | J | K | L | M | N |
+                  O | P | Q | R | S | T | U | V | W | X | Y | Z |
+                  a | b | c | d | e | f | g | h | i | j | k | l | m | n |
+                  o | p | q | r | s | t | u | v | w | x | y | z</code></pre>
+<p>The above BNF grammar uses the curly brackets (&quot;{&quot;, &quot;}&quot;) construct in BNF to apply the production rule &quot;\<letter*\>&quot;, zero or more times. Running Gramtest with this grammar as input produces strings that contain the world &quot;main&quot; somewhere in them.</letter*\></p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$ java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/main.bnf
+
+Generating tests ...
+AAAmainAAA
+AAAmainAAB
+AAAmainAAC
+AAAmainAAD
+AAAmainAAE
+AAAmainAAF
+AAAmainAAG
+AAAmainAAH
+AAAmainAAI
+AAAmainAAJ
+...</code></pre>
+<p>In addition to the special curly bracket symbols, Gramtest also supports the square brackets (&quot;[&quot;, &quot;]&quot;) for specifying an optional production rule. While, the parentheses (&quot;(&quot;, &quot;)&quot;) are used for repeating the rule one or more times. For details on the syntax support please refer to the <a href="https://github.com/codelion/gramtest/blob/master/src/main/antlr4/com/sourceclear/gramtest/bnf.g4" target="_blank">BNF ANTLR4 grammar</a> that is included with the sources of Gramtest. Hopefully, by now you are convinced that Gramtest is a useful tool to generate test cases from arbitrary user defined grammars.</p><p>We will look at some of the details behind the implementation of the tool in a future article. Meanwhile, do let us know your comments on grammar-based testing and please feel free to contribute to the tool by forking it on <a href="https://github.com/codelion/gramtest" target="_blank">Github</a>.</p><p>Now, we will examine some practical tips to keep in mind while implementing grammar-based test case generation. These guidelines are based on the experience of implementing <a href="https://github.com/codelion/gramtest" target="_blank">Gramtest</a> - a Java tool that allows you to generate test cases based on arbitrary user defined grammars. If you are curious about what is grammar-based test case generation, I suggest you look at our <a href="https://blog.srcclr.com/how-does-grammar-based-test-case-generation-work/" target="_blank">previous article</a> on the topic. Let&apos;s jump right in on how we implemented Gramtest.</p><h2 id="implementation">Implementation</h2><p>The key aspect of the grammar-based test case generation algorithm in Gramtest is to follow all the production rules of the given BNF grammar and then generate strings that conform to the grammar. The production rules themselves form a tree, the root of the tree is the starting rule for generating all the strings in the grammar. For example, consider the following BNF grammar describing all the course codes at a university:</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">coursecode</span>&gt;</span>   ::= <span class="hljs-tag">&lt;<span class="hljs-name">acadunit</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">coursenumber</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">acadunit</span>&gt;</span>     ::= <span class="hljs-tag">&lt;<span class="hljs-name">letter</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">letter</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">letter</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">coursenumber</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">year</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">semesters</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">digit</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">digit</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">year</span>&gt;</span>         ::= <span class="hljs-tag">&lt;<span class="hljs-name">ugrad</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">grad</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ugrad</span>&gt;</span>        ::= 0 | 1 | 2 | 3 | 4
+<span class="hljs-tag">&lt;<span class="hljs-name">grad</span>&gt;</span>         ::= 5 | 6 | 7 | 9
+<span class="hljs-tag">&lt;<span class="hljs-name">semesters</span>&gt;</span>    ::= <span class="hljs-tag">&lt;<span class="hljs-name">onesemester</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">twosemesters</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">onesemester</span>&gt;</span>  ::= <span class="hljs-tag">&lt;<span class="hljs-name">frenchone</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">englishone</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">bilingual</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frenchone</span>&gt;</span>    ::= 5 | 7
+<span class="hljs-tag">&lt;<span class="hljs-name">englishone</span>&gt;</span>   ::= 1 | 3
+<span class="hljs-tag">&lt;<span class="hljs-name">bilingual</span>&gt;</span>    ::= 9
+<span class="hljs-tag">&lt;<span class="hljs-name">twosemesters</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">frenchtwo</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">englishtwo</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">frenchtwo</span>&gt;</span>    ::= 6 | 8
+<span class="hljs-tag">&lt;<span class="hljs-name">englishtwo</span>&gt;</span>   ::= 2 | 4
+<span class="hljs-tag">&lt;<span class="hljs-name">digit</span>&gt;</span>        ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<span class="hljs-tag">&lt;<span class="hljs-name">letter</span>&gt;</span>       ::= A | B | C | D | E | F | G | H | I | J | K | L | M | N |
+                   O | P | Q | R | S | T | U | V | W | X | Y | Z</code></pre>
+<p>In this grammar the rule <code>&lt;coursecode&gt; ::= &lt;acadunit&gt; &lt;coursenumber&gt;</code> is at the root. In order to generate the strings in this grammar, we follow all the rules starting from the root (going from top to bottom) to a terminal. When we reach a terminal, we generate a string corresponding to that terminal. For rules that contain alternatives we need to follow all the alternate branches generating strings in an exhaustive manner. Thus, when we run Gramtest on this input it generates the following strings:</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$
+java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/coursecodes.bnf
+Generating tests ...
+ZZX0989
+ZZW0989
+ZZW0988
+ZZV0988
+ZZV0987
+ZZU0987
+ZZU0986
+ZZT0986
+ZZT0985
+ZZS0985
+ZZS0984
+ZZR0984
+ZZR0983
+ZZQ0983
+ZZQ0982
+ZZP0982
+ZZP0981
+...</code></pre>
+<p>This simple algorithm based on exhaustive search over the production rules guarantees that we will generate all possible strings in the grammar. However, it may not be feasible to do so all the time. Let us look at some of the challenges with this approach that make it difficult to use it for practical test case generation.</p><h2 id="challenges">Challenges</h2><p>In general, a given BNF grammar can contain infinitely many strings due to the recursive nature of the production rules. Recall the following grammar for arithmetic expressions from our <a href="https://blog.srcclr.com/how-does-grammar-based-test-case-generation-work/" target="_blank">previous article</a>:</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span>  ::=   <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">addOps</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span>        ::=   <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">multOps</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">term</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">addOps</span>&gt;</span>      ::=   + | -
+<span class="hljs-tag">&lt;<span class="hljs-name">multOps</span>&gt;</span>     ::=   * | /
+<span class="hljs-tag">&lt;<span class="hljs-name">factor</span>&gt;</span>      ::=   &quot;(&quot; <span class="hljs-tag">&lt;<span class="hljs-name">expression</span>&gt;</span> &quot;)&quot; | <span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">constant</span>&gt;</span>    ::=   0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</code></pre>
+<p>This grammar captures all possible arithmetic expressions and thus if we blindly follow the rules and generate strings, the test case generation will never finish. It is also possible for a BNF grammar without recursive rules to have an unbounded number of strings if the grammar uses the repetition operator. Due to all these cases we need to find a way to terminate the test-case generation algorithm early, otherwise Gramtest would not be very useful for automated fuzzing and testing.</p><h2 id="practical-tips">Practical Tips</h2><p>We look at three useful ideas that improve on the simple naive exhaustive test case generation and provide a mechanism to address the challenges described in the previous section. All the following three tips are implemented in Gramtest, and if you are curious you can also have a look at the <a href="https://github.com/codelion/gramtest" target="_blank">source code</a>.</p><h3 id="tip-1-restrict-the-number-of-tests-to-be-generated">Tip 1: Restrict the number of tests to be generated</h3><p>The easiest way to fix the problem is to just restrict the maximum number of test cases that can be generated. In Gramtest, this can be done by using the <code>-num</code> switch. This will ensure that the test case generation algorithm stops after generating the specified number of tests. For example we can generate 10 test cases from the BNF grammar of arithmetic expressions by setting <code>-num 10</code> as shown below:</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$
+java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/arithexp.bnf -num 10
+Generating tests ...
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+0
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+1
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+2
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+3
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+4
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+5
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+6
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+7
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+8
+(0*0+0)*(0)*0*0*0+(0)*0*0*0+0*0*0+0*0+9</code></pre>
+<h3 id="tip-2-bound-the-depth-of-recursive-rules">Tip 2: Bound the depth of recursive rules</h3><p>The first tip, though useful, will unfortunately not work for a grammar with recursive rules. While generating the test cases for a recursive rule, we can end up applying the rule again and again (due to recursion) and thus it is possible that the algorithm will not terminate even while generating a single string. To handle such cases we propose bounding the depth of the recursive rule. In Gramtest it can be done by setting the <code>-dep</code> parameter as shown below:</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$
+java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/arithexp.bnf -num 10 -dep 1
+Generating tests ...
+(0)*0*0*0+0*0*0+0*0+0
+(0)*0*0*0+0*0*0+0*0+1
+(0)*0*0*0+0*0*0+0*0+2
+(0)*0*0*0+0*0*0+0*0+3
+(0)*0*0*0+0*0*0+0*0+4
+(0)*0*0*0+0*0*0+0*0+5
+(0)*0*0*0+0*0*0+0*0+6
+(0)*0*0*0+0*0*0+0*0+7
+(0)*0*0*0+0*0*0+0*0+8
+(0)*0*0*0+0*0*0+0*0+9</code></pre>
+<p>By setting <code>-dep 1</code> above, we ensure that when Gramtest sees a recursive rule it will apply the rule only once (follow the rule only once). Typically, we use this parameter in conjunction with restriction on the maximum number of test cases to ensure that the algorithm terminates. The <code>-dep</code> parameter also implicitly controls the length of the generated strings. If we compare the output above with the one under the previous tip where the default value of <code>-dep</code> (2) was used, it is clear that the length of the strings generated in this case are smaller.</p><h3 id="tip-3-use-a-minimal-sentence-generator">Tip 3: Use a minimal sentence generator</h3><p>If you have a careful look at the strings that are generated above, you will notice that they all exercise only one part of the grammar and they are very similar to each other. For good test case generation we want the generated tests to be more diverse so that they can exercise different paths in the program that is being tested. The quality of the test cases is usually measured using coverage criteria like statement coverage (percentage of statements in the program that are executed by the tests), branch coverage (percentage of conditional branches that are executed by the tests) etc. For grammar-based test case generation, a useful metric is the <em>production coverage</em>. Production coverage refers to the percentage of production rules in the grammar that are exercised by the test cases.</p><p>For achieving production coverage, we can also use a minimal sentence generator. A minimal sentence generator creates a string with the minimum length that is required for the given production rule. Paul Purdom presented a minimal sentence generator in his <a href="http://link.springer.com/article/10.1007%2FBF01932308" target="_blank">classical paper</a> on testing parsers. Although the paper presents the parsers for simple LR(1) grammars, the same ideas can be extended and applied to other grammars. In my paper on <a href="http://asankhaya.github.io/pdf/BuildingExtensibleParserswithCamlp4.pdf" target="_blank">Building Extensible Parsers using Camlp4</a> I describe one such variation of Purdom&apos;s algorithm that can be used to test the extensible grammars supported by Camlp4. Gramtest uses a similar variation for generating minimal sentences for BNF grammars.</p><p>The minimal sentence generator can be set using the <code>-mingen</code> flag as follows:</p><pre><code>Asankhayas-MacBook-Pro:target asankhaya$
+java -jar gramtest-0.1-SNAPSHOT-jar-with-dependencies.jar
+-file ../src/test/resources/arithexp.bnf
+-num 10 -dep 2 -mingen true
+Generating tests ...
+(2*0+9)*(1)+(0)/9
+(2*0+9)*(1)+(0)*0
+(3+0)-(9)*0
+(3+0)-4*1
+(3+0)+4*1
+(3+0)+4/2
+4*(3)+4/2
+(3-2)*(2)+(2)*3
+(3-1)*(3)-(2)*3
+(3+1)/(2)-(1)</code></pre>
+<p>Looking at the output we see that the generated tests are much more diverse and cover different alternatives in the grammar using smaller sentences.</p><p>By using all the three tips we get a tool that is more useful and has practical applications. The default value of the options used in Gramtest are <code>-num 100 -dep 2 -mingen true</code>, but please go ahead and have a look at the <a href="https://github.com/codelion/gramtest" target="_blank">source code</a> or play around with the other options. For a given BNF grammar you may get better results with a different set of options. If you have any further tips based on your experience or have any other suggestions on improving Gramtest, do let us know in the comments.</p><h2 id="continuous-fuzzing-of-java-projects-with-gramtest">Continuous fuzzing of Java projects with GramTest</h2><p>Next we will see how you can use GramTest to generate continuous tests that can in-turn be used to fuzz Java libraries and applications.</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span> ::=   <span class="hljs-tag">&lt;<span class="hljs-name">httpaddress</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">ftpaddress</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">newsaddress</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">nntpaddress</span>&gt;</span> |
+      <span class="hljs-tag">&lt;<span class="hljs-name">prosperoaddress</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">telnetaddress</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">gopheraddress</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">waisaddress</span>&gt;</span> | 
+      <span class="hljs-tag">&lt;<span class="hljs-name">mailtoaddress</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">httpaddress</span>&gt;</span> ::= h t t p : / / <span class="hljs-tag">&lt;<span class="hljs-name">hostport</span>&gt;</span> [/ <span class="hljs-tag">&lt;<span class="hljs-name">path</span>&gt;</span>] [? <span class="hljs-tag">&lt;<span class="hljs-name">search</span>&gt;</span>]
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ftpaddress</span>&gt;</span> ::=  f t p : / / <span class="hljs-tag">&lt;<span class="hljs-name">login</span>&gt;</span> / <span class="hljs-tag">&lt;<span class="hljs-name">path</span>&gt;</span> [; <span class="hljs-tag">&lt;<span class="hljs-name">ftptype</span>&gt;</span>]
+
+<span class="hljs-tag">&lt;<span class="hljs-name">newsaddress</span>&gt;</span> ::= n e w s : <span class="hljs-tag">&lt;<span class="hljs-name">groupart</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">nntpaddress</span>&gt;</span> ::=   n n t p : <span class="hljs-tag">&lt;<span class="hljs-name">group</span>&gt;</span> / <span class="hljs-tag">&lt;<span class="hljs-name">digits</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">telnetaddress</span>&gt;</span> ::=  t e l n e t : / / <span class="hljs-tag">&lt;<span class="hljs-name">login</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">gopheraddress</span>&gt;</span> ::=  g o p h e r : / / <span class="hljs-tag">&lt;<span class="hljs-name">hostport</span>&gt;</span> [/ <span class="hljs-tag">&lt;<span class="hljs-name">gtype</span>&gt;</span> [<span class="hljs-tag">&lt;<span class="hljs-name">gcommand</span>&gt;</span>]]
+
+<span class="hljs-tag">&lt;<span class="hljs-name">mailtoaddress</span>&gt;</span> ::=  m a i l t o : <span class="hljs-tag">&lt;<span class="hljs-name">xalphas</span>&gt;</span> @ <span class="hljs-tag">&lt;<span class="hljs-name">hostname</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">waisaddress</span>&gt;</span> ::= <span class="hljs-tag">&lt;<span class="hljs-name">waisindex</span>&gt;</span> | <span class="hljs-tag">&lt;<span class="hljs-name">waisdoc</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">waisindex</span>&gt;</span> ::=   w a i s : / / <span class="hljs-tag">&lt;<span class="hljs-name">hostport</span>&gt;</span> / <span class="hljs-tag">&lt;<span class="hljs-name">database</span>&gt;</span> [? <span class="hljs-tag">&lt;<span class="hljs-name">search</span>&gt;</span>]
+
+<span class="hljs-tag">&lt;<span class="hljs-name">waisdoc</span>&gt;</span> ::=   w a i s : / / <span class="hljs-tag">&lt;<span class="hljs-name">hostport</span>&gt;</span> / <span class="hljs-tag">&lt;<span class="hljs-name">database</span>&gt;</span> / <span class="hljs-tag">&lt;<span class="hljs-name">wtype</span>&gt;</span> / <span class="hljs-tag">&lt;<span class="hljs-name">wpath</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">wpath</span>&gt;</span>   ::=   <span class="hljs-tag">&lt;<span class="hljs-name">digits</span>&gt;</span> = <span class="hljs-tag">&lt;<span class="hljs-name">path</span>&gt;</span> ; [<span class="hljs-tag">&lt;<span class="hljs-name">wpath</span>&gt;</span>]</code></pre>
+<p>As an example we will use the grammar for URLs as defined in <a href="https://tools.ietf.org/html/rfc1738" target="_blank">rfc1738</a>. Part of the grammar is shown above and as you can see, it if fairly complex. If you directly run GramTest from command line using this grammar as input you will get some interesting test cases:</p><pre><code>Generating tests ...
+mailto:5ol@S*7
+prospero://E:4/%Dd
+http://c7
+nntp:N.p/00
+telnet://
+news:O2
+ftp://+n@aF5:21/
+wais://B.U/*u/,4_/82=;
+gopher://T53</code></pre>
+<p>This is good for test case generation but not ideal if you want to run a long fuzzing session with some library or application. For doing continuous fuzzing you can use GramTest as a library very easily. The <a href="https://github.com/codelion/gramtest/blob/master/src/main/java/com/sourceclear/gramtest/TestRunner.java" target="_blank"><code>TestRunner</code></a> class provided in GramTest makes it easy to integrate with any application for fuzzing. You can even implement it as part of a test case:</p><pre><code class="lang-java"><span class="hljs-comment">/**
+ * Test with url grammar
+ * <span class="hljs-doctag">@throws</span> java.io.IOException
+ */</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-meta">@Ignore</span>(<span class="hljs-string">&quot;Non terminating test case&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testQueueGenerator</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+  <span class="hljs-keyword">final</span> BlockingQueue&lt;String&gt; queue = <span class="hljs-keyword">new</span> SynchronousQueue&lt;&gt;();
+  TestRunner continuousRunner = <span class="hljs-keyword">new</span> TestRunner(getClass().getResourceAsStream(<span class="hljs-string">&quot;/url.bnf&quot;</span>), queue, <span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">32</span>);
+  <span class="hljs-keyword">new</span> Thread(continuousRunner).start();
+  consumeTests(queue);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consumeTests</span><span class="hljs-params">(BlockingQueue&lt;String&gt; queue)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+    String testCase = queue.take();
+    <span class="hljs-keyword">try</span> {
+      URL.parse(testCase);
+    } <span class="hljs-keyword">catch</span> (URLParseException e) {
+      System.out.println(testCase);
+    }
+  }
+}</code></pre>
+<p>Just pass the BNF grammar file as  input and a <code>BlockingQueue</code> to read the generated tests. The queue just makes it easy to add multiple consumers that can each run in their own thread in parallel. This will allow you to run long fuzzing sessions against a target Java library or application. In fact with this exact set up and the given URL input grammar, GramTest found <a href="https://issues.apache.org/jira/browse/VALIDATOR-410" target="_blank">a bug</a> in the Apache Commons URL validator.</p><p>If you use GramTest and find new bugs using it, please let us know. Until next time, happy fuzzing!</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07-update-advisor.html" class="navigation navigation-prev " aria-label="Previous page: Proof Pearl: On the Correctness of Update Advisor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="08-symbolic.html" class="navigation navigation-next " aria-label="Next page: Dynamic Symbolic Execution with Pathgrind">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GramTest: a tool for grammar-based test case generation","level":"1.12","depth":1,"next":{"title":"Dynamic Symbolic Execution with Pathgrind","level":"1.13","depth":1,"path":"chapters/08-symbolic.md","ref":"chapters/08-symbolic.md","articles":[]},"previous":{"title":"Proof Pearl: On the Correctness of Update Advisor","level":"1.11","depth":1,"path":"chapters/07-update-advisor.md","ref":"chapters/07-update-advisor.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/13-grammar.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

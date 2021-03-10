@@ -1,0 +1,454 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Beyond Unit Tests: Automated Test Case Generation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02-property-based-testing.html" />
+    
+    
+    <link rel="prev" href="00-introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Beyond Unit Tests: Automated Test Case Generation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="beyond-unit-tests-automated-test-case-generation">Beyond Unit Tests: Automated Test Case Generation</h1><p>Unit testing is an important aspect of software development. Having a proper test suite for your project can help detect bugs early and prevent regressions. Wouldn&apos;t it be great if we could generate unit test cases automatically? Well, it is certainly possible and I will explain in this article how you can do so for Java.</p><p>Recently, I had a chance to look at unit test case generation for Java. I had forked an old cross platform serialization library <a href="https://github.com/codelion/wox" target="_blank">wox</a> and it did not come with a test suite. I had to make a few changes and fix some bugs in the library to make it work with the current version of Java platform. I wanted to ensure that the changes I made did not break any existing functionality. Since the wox library did not come with its own set of test cases it was difficult to check that no regression bugs were introduced.</p><p>After searching online, I found an automated test suite generation framework for Java - <a href="http://www.evosuite.org/" target="_blank">EvoSuite</a>. The EvoSuite framework automatically generates test cases for Java classes based on maximizing a coverage criteria, like branch coverage. I used their standalone jar to add a test suite to the wox library. It was surprisingly easy to set up and use.</p><p>In order to generate the test suite we use the following command:</p><pre><code class="lang-sh">java -jar evosuite.jar -generateTests &lt;target&gt; [options]</code></pre>
+<p>The <strong>\<target></target></strong> can be either a jar file of a folder containing your class files. This would generate the test cases in a folder named &quot;evosuite-tests&quot; in the current directory.
+The test cases generated use JUnit and can be run separately from an IDE as well.
+The <strong>[options]</strong> control various parameters including coverage criteria, the default criteria
+is branch coverage. Thus the generated tests cover all the branches in the methods. If you are using some external library then make sure that it is available in the class path otherwise EvoSuite will not be able to create test cases with objects that are defined in that library. This is because to create objects during generation of test cases EvoSuite needs to call appropriate constructors for those objects.</p><p>For test case generation, EvoSuite has a bunch of different strategies including <em>search-based</em> and <em>constraint-based</em> algorithms.</p><ul><li><p><em>Search Based Test Generation</em> : Uses a <a href="http://en.wikipedia.org/wiki/Genetic_algorithm" target="_blank">genetic algorithm</a> to evolve the population of candidate test cases that satisfy a particular fitness function</p></li>
+<li><p><em>Constraint Based Test Generation</em> : Uses <a href="http://en.wikipedia.org/wiki/Symbolic_execution" target="_blank">symbolic execution</a> to generate constraints and solve those constraints to explore different paths in the program.</p></li></ul>
+<p>Their <a href="http://www.evosuite.org/wp-content/papercite-data/pdf/ase11.pdf" target="_blank">ASE 2011 paper</a> explains  both the above techniques and how they can be combined and used together.</p><p>In terms of the quality of the automated generated test cases, it seems to do a good job of capturing the current behavior of the methods while providing good branch coverage. As an example consider the following method from the <strong>wox.serial.Util</strong> class :</p><pre><code class="lang-java"> <span class="hljs-comment">/**
+     * Returns true if the class which name is passed as parameter is &lt;i&gt;stringable&lt;/i&gt;.
+     * In other words, returns true if objects of the class can go easily to a string
+     * representation.
+     * <span class="hljs-doctag">@param</span> name The name of the class to test.
+     * <span class="hljs-doctag">@return</span> True if the class is stringable. False otherwise.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">stringable</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            Class realDataType = (Class)TypeMapping.mapWOXToJava.get(name);
+            <span class="hljs-comment">//if the data type was found in the mapWOXToJava then it is &quot;stringable&quot;</span>
+            <span class="hljs-keyword">if</span> (realDataType!=<span class="hljs-keyword">null</span>){
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+            <span class="hljs-keyword">else</span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            }
+        } <span class="hljs-keyword">catch</span>(Exception e) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+    }</code></pre>
+<p>The <strong>stringable</strong> method has two branches that correspond to whether the input <strong>name</strong> can be converted to a string by the <strong>mapWOXToJava.get</strong> method. EvoSuite generates the following two test cases for this method. <strong>test02</strong> covers the branch where the conditional is true whole <strong>test03</strong> covers the else branch. Also note that it is automatically able to create the inputs for <strong>name</strong> argument that drive the execution to the different branches.</p><pre><code class="lang-java">  <span class="hljs-comment">//Test case number: 2</span>
+  <span class="hljs-comment">/*
+   * 1 covered goal:
+   * 1 wox.serial.Util.stringable(Ljava/lang/String;)Z: I10 Branch 21 IFNULL L125 - false
+   */</span>
+
+  <span class="hljs-meta">@Test</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test02</span><span class="hljs-params">()</span>  <span class="hljs-keyword">throws</span> Throwable  </span>{
+      <span class="hljs-keyword">boolean</span> boolean0 = Util.stringable(<span class="hljs-string">&quot;charWrapper&quot;</span>);
+      assertEquals(<span class="hljs-keyword">true</span>, boolean0);
+  }
+
+  <span class="hljs-comment">//Test case number: 3</span>
+  <span class="hljs-comment">/*
+   * 1 covered goal:
+   * 1 wox.serial.Util.stringable(Ljava/lang/String;)Z: I10 Branch 21 IFNULL L125 - true
+   */</span>
+
+  <span class="hljs-meta">@Test</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test03</span><span class="hljs-params">()</span>  <span class="hljs-keyword">throws</span> Throwable  </span>{
+      <span class="hljs-keyword">boolean</span> boolean0 = Util.stringable(<span class="hljs-string">&quot;2p8f2V@rzS&quot;</span>);
+      assertEquals(<span class="hljs-keyword">false</span>, boolean0);
+  }</code></pre>
+<p>You can have a look at the entire test suite generated for the wox library at the <a href="https://github.com/codelion/wox/tree/master/java/evosuite-tests/wox/serial" target="_blank">GitHub repo</a>. For the purpose of creating a regression test suite for a library that did not have one it seems to be quite effective. Now, if I make some changes in the wox library I can run the tests again and check if leads to any test failures. In general, automated test cases may not be as good as hand written ones. Another potential issue is the evolution of the test suite. Generating new tests with EvoSuite for each release may not be the right thing to do. Nevertheless the automated test suite can be used as a base for writing your own more comprehensive test cases, which is what I plan to do with the wox library.</p><p>There are several other tools (under active development) for Java that also produce automated unit test cases. I haven&apos;t had a chance to use them yet but I list them here for reference - <a href="https://github.com/ksen007/janala2" target="_blank">CATG</a>, <a href="http://code.google.com/p/randoop" target="_blank">Randoop</a> and <a href="http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-symbc" target="_blank">Symbolic Pathfinder</a>. An experience report, titled <a href="http://www.evosuite.org/wp-content/papercite-data/pdf/fittest2014.pdf" target="_blank">EvoSuite at the Second
+Unit Testing Tool Competition</a> provides more details on using EvoSuite and how it compares with other similar tools.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="00-introduction.html" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02-property-based-testing.html" class="navigation navigation-next " aria-label="Next page: Beyond Unit Tests: Property-based Testing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Beyond Unit Tests: Automated Test Case Generation","level":"1.3","depth":1,"next":{"title":"Beyond Unit Tests: Property-based Testing","level":"1.4","depth":1,"path":"chapters/02-property-based-testing.md","ref":"chapters/02-property-based-testing.md","articles":[]},"previous":{"title":"Introduction","level":"1.2","depth":1,"path":"chapters/00-introduction.md","ref":"chapters/00-introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/01-automated-test-case-generation.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,540 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Proof Pearl: On the Correctness of Update Advisor · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="13-grammar.html" />
+    
+    
+    <link rel="prev" href="09-monitoring.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Proof Pearl: On the Correctness of Update Advisor</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="proof-pearl-on-the-correctness-of-update-advisor">Proof Pearl: On the Correctness of Update Advisor</h1><h2 id="motivation">Motivation</h2><p>We developed a feature at SourceClear called Update Advisor: a static analysis which determines if a library upgrade would cause breakage when applied to a project.</p><p>To summarize the approach: given two consecutive versions of a library, $v1$ and $v2$, and a project that depends on $v1$, we first compute a <em>semantic</em> diff $d$ between the public APIs of $v1$ and $v2$, then check if the project was calling any of the methods changed or removed in $d$; if so, we&apos;d label the upgrade <em>breaking</em>. The diff is <em>semantic</em> in the sense that it takes into account calling relationships.</p><p>We wanted users to be able to run this analysis on every commit in CI/CD. However, it involved building call graphs for arbitrarily complex open source libraries, which could take significant amounts of time and memory -- we knew this all too well from the experience of building call graphs for our <a href="https://arxiv.org/abs/1909.00973" target="_blank">vulnerable methods analysis</a>.</p><p>An obvious solution was to precompute these libraries diffs, but what would we store? Real-world libraries can have hundreds of versions, theoretically as many as <a href="https://mvnrepository.com/artifact/com.lihaoyi/ammonite-terminal" target="_blank">one per commit</a>. Seeing as a diff could be requested for any pair of versions in the range, storing $O(n^2)$ diffs didn&apos;t seem like a good idea.</p><p>The solution we came up with was to store a linear number of diffs -- only those between consecutive pairs of libraries -- and <em>compose</em> them on request to derive diffs for arbitrary pairs of versions.</p><h2 id="composing-diffs">Composing Diffs</h2><p>What does it mean to compose diffs?</p><p>Intuitively, given three versions of a library:</p><pre><code class="lang-js"><span class="hljs-comment">// version 1</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// version 2</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">// version 3</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+}</code></pre>
+<ul><li>Function <code>a</code> was changed across versions 1 and 2, and deleted in version 3.
+</li>
+<li>Function <code>b</code> was added in version 2 and remained unchanged after.
+</li></ul>
+<p>The diffs might look like something this:</p><pre><code class="lang-yaml"><span class="hljs-comment"># diff between version 1 and 2</span>
+<span class="hljs-attr">a:</span> CHANGED
+<span class="hljs-attr">b:</span> ADDED</code></pre>
+<pre><code class="lang-yaml"><span class="hljs-comment"># diff between version 2 and 3</span>
+<span class="hljs-attr">a:</span> DELETED
+<span class="hljs-attr">b:</span> UNCHANGED</code></pre>
+<p>Say we&apos;re upgrading a user project from versions <em>1</em> to <em>3</em> directly and need the diff between those. The actual diff is:</p><pre><code class="lang-yaml"><span class="hljs-attr">a:</span> DELETED
+<span class="hljs-attr">b:</span> ADDED</code></pre>
+<p>It seems reasonable that there must be some relationship between the actual diff and the intermediate diffs we saw:</p><pre><code class="lang-yaml"><span class="hljs-attr">a:</span> DELETED = compose(CHANGED, DELETED)?
+<span class="hljs-attr">b:</span> ADDED = compose(ADDED, UNCHANGED)?</code></pre>
+<h2 id="a-closer-look">A Closer Look</h2><p>A diff is a set of pairs of an API function and some <em>diff operation</em> which describes how the function changed across versions. We define 5 primitive operations: insertion (I), deletion (D), being changed (C), remaining unchanged (U), and being missing altogether (M).</p><p>Let&apos;s try to figure out the full composition function. There are a few easy ones, but it gets tricky.</p><pre><code class="lang-idris">-- The two from above
+compose Changed Deleted = Deleted
+compose Inserted Unchanged = Inserted
+
+-- This seems reasonable too: it was a net insertion
+compose Inserted Changed = Inserted
+
+-- Hmm...
+compose Inserted Deleted = Missing or Unchanged?
+compose Deleted Inserted = Unchanged or Changed?
+
+-- Huh?
+compose Inserted Inserted = ?</code></pre>
+<p>This leads us into what it means for the diff composition function to be <em>correct</em>. A working specification could be that each pair of inputs has an unambiguous result, given justifcation of some kind, and always approximates the actual diff conservatively. The existence of absurd combinations like <code>Inserted</code> and  <code>Inserted</code> is another clue that there is some underlying structure to these operations.</p><p>That structure is <em>whether or not the associated API function of each operation is present in the library versions the diff was computed from</em>. Say we have library versions $v1$, $v2$, and $v3$. Given an API function $f$ and that the diff between $v1$ and $v2$ has the operation <code>Inserted</code>, $f$ must have been absent from $v1$ and present in $v2$. The same argument extends to $v2$ and $v3$. Composing the two insertions then makes no sense because $f$ cannot simultaneously be absent and present in $v2$. It&apos;s as if <code>Inserted</code> has the type <code>Absent -&gt; Present</code>, which prevents it from being composed with itself.</p><p>With this intuition, we model diff operations as types (in <a href="https://www.idris-lang.org/" target="_blank">Idris</a>, because of its magical ability to finish programs for us). An API function is either absent or present:</p><pre><code class="lang-idris">data State = Absent | Present</code></pre>
+<p>Diff operations have their corresponding types:</p><pre><code class="lang-idris">data Diff : State -&gt; State -&gt; Type where
+  Insert : Diff Absent Present
+  Change : Diff Present Present
+  Delete : Diff Present Absent
+  Unchanged : Diff Present Present
+  Missing : Diff Absent Absent</code></pre>
+<p>The composition has a familiar type:</p><pre><code class="lang-idris">compose : Diff a b -&gt; Diff b c -&gt; Diff a c</code></pre>
+<p>Case-splitting on <code>compose</code> and methodically using <a href="http://docs.idris-lang.org/en/latest/tutorial/interactive.html#proofsearch" target="_blank">Idris&apos; proof search</a> reveals that there is an unambiguous answer for most cases; furthermore, invalid cases do not even have to be represented, and Idris allows us to leave them out.</p><pre><code class="lang-idris">compose Inserted Changed = Inserted
+compose Inserted Deleted = Missing
+compose Inserted Unchanged = Inserted
+compose Changed Deleted = Deleted
+compose Deleted Missing = Deleted
+compose Unchanged Deleted = Deleted
+compose Missing Inserted = Inserted
+compose Missing Missing = Missing</code></pre>
+<p>The only cases which aren&apos;t unambiguous are those involving <code>Changed</code> or <code>Unchanged</code>, because they have the <a href="https://github.com/quchen/articles/blob/master/algebraic-blindness.md" target="_blank">same type</a>. As this is a static analysis, we err on the side of caution and pick the more conservative answer -- whenever possible, assume something is changed. We could formalize this further with a lattice, but seeing as there as there are only five cases left...</p><pre><code class="lang-idris">compose Changed Changed = Changed -- only thing that makes sense
+compose Changed Unchanged = Changed -- more conservative
+compose Deleted Inserted = Changed -- more conservative
+compose Unchanged Changed = Changed -- more conservative
+compose Unchanged Unchanged = Unchanged -- only thing that makes sense</code></pre>
+<p>This gives us the following table:</p><table>
+<thead>
+<tr><th>  </th>
+<th> I </th>
+<th> C </th>
+<th> D </th>
+<th> U </th>
+<th> M </th>
+</tr></thead><tbody>
+<tr><td style="text-align:left"> <strong>I</strong> </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> I </td>
+<td style="text-align:left"> M </td>
+<td style="text-align:left"> I </td>
+<td style="text-align:left"> $\bot$ </td>
+</tr><tr><td style="text-align:left"> <strong>C</strong> </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> D </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> $\bot$ </td>
+</tr><tr><td style="text-align:left"> <strong>D</strong> </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> D </td>
+</tr><tr><td style="text-align:left"> <strong>U</strong> </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> D </td>
+<td style="text-align:left"> U </td>
+<td style="text-align:left"> $\bot$ </td>
+</tr><tr><td style="text-align:left"> <strong>M</strong> </td>
+<td style="text-align:left"> I </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> M</td>
+</tr></tbody></table>
+
+<p>We are also in a better position now to think about our earlier definitions:</p><p><strong>Why not express C in terms of I and D?</strong> So we don&apos;t lose information. For example, if a function is deleted and later inserted, we want to be able to express that it might have changed.</p><p><strong>Why distinguish U and M?</strong> U and M operate on functions with different state.</p><p>Composition is not symmetric:</p><pre><code>I . D = M
+D . I = C</code></pre>
+<p>However, it is associative (proven by exhaustion).</p><h2 id="conflating-u-and-m">Conflating U and M</h2><p>It turns out that we can conflate U and M into a single operation, <em>unknown</em> (?), since they occur in mutually exclusive scenarios. This is useful in practice because when we compute diffs, we want to store just the changes instead of also keeping track of everything that remained unchanged. Also, this doesn&apos;t change composition semantics (proven by exhaustion).</p><p>Implementing this change gives us the following table.</p><table>
+<thead>
+<tr><th style="text-align:left">  </th>
+<th style="text-align:left"> I </th>
+<th style="text-align:left"> C </th>
+<th style="text-align:left"> D </th>
+<th style="text-align:left"> ? </th>
+</tr></thead><tbody>
+<tr><td style="text-align:left"> <strong>I</strong> </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> I </td>
+<td style="text-align:left"> ? </td>
+<td style="text-align:left"> I </td>
+</tr><tr><td style="text-align:left"> <strong>C</strong> </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> D </td>
+<td style="text-align:left"> C </td>
+</tr><tr><td style="text-align:left"> <strong>D</strong> </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> $\bot$ </td>
+<td style="text-align:left"> D </td>
+</tr><tr><td style="text-align:left"> <strong>?</strong> </td>
+<td style="text-align:left"> I </td>
+<td style="text-align:left"> C </td>
+<td style="text-align:left"> D </td>
+<td style="text-align:left"> ?</td>
+</tr></tbody></table>
+
+<p>More details are available in our <a href="https://asankhaya.github.io/pdf/Efficient-Static-Checking-of-Library-Updates.pdf" target="_blank">FSE2018 paper</a>.</p><h2 id="final-thoughts">Final Thoughts</h2><p>What does it mean for a function to be <a href="https://en.wikipedia.org/wiki/Correctness_%28computer_science%29" target="_blank">correct</a>? Correctness only makes sense in the presence of a specification; here ours was that composition was umambiguous, or that the results were at least justifiable, and would always conservatively approximate the actual diff. I&apos;d say we achieved that here, to the end of gaining more confidence that we could build Update Advisor on the idea of diff composition.</p><p>The use of formal methods on day-to-day software problems is still costly enough nowadays that it is not mainstream, and often not as readily applicable as simply writing more (types of) tests, as we have done in the earlier parts of this book. Nevertheless, tools like TLA+, Alloy, or even proof assistants and dependently-typed languages like Coq and Idris are essential additions to one&apos;s toolbox; they are useful when the kernel of a problem can be distilled and formalized, so we can be sure the software built atop it has robust foundations.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="09-monitoring.html" class="navigation navigation-prev " aria-label="Previous page: Monitoring as Testing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="13-grammar.html" class="navigation navigation-next " aria-label="Next page: GramTest: a tool for grammar-based test case generation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Proof Pearl: On the Correctness of Update Advisor","level":"1.11","depth":1,"next":{"title":"GramTest: a tool for grammar-based test case generation","level":"1.12","depth":1,"path":"chapters/13-grammar.md","ref":"chapters/13-grammar.md","articles":[]},"previous":{"title":"Monitoring as Testing","level":"1.10","depth":1,"path":"chapters/09-monitoring.md","ref":"chapters/09-monitoring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/07-update-advisor.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

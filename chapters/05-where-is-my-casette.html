@@ -1,0 +1,515 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Where is my cassette? Mocking system testing using capture and replay · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06-contract.html" />
+    
+    
+    <link rel="prev" href="04-functional.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Where is my cassette? Mocking system testing using capture and replay</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="where-is-my-cassette-mocking-system-testing-using-capture-and-replay">Where is My Cassette? Mocking System Testing using Capture and Replay</h1><h2 id="introduction">Introduction</h2><p><em>Software Composition Analysis</em> (<em>SCA</em>) has gained traction in industry with
+offerings from various companies. It helps developers identify vulnerable
+open-source libraries used in the software they develop. The following picture
+shows the architecture of an SCA system:</p><p><img alt="Software Composition Analysis System" src="../images/sca-overview.png"></p><p>In an SCA system, a customer scans their applications using a scanner software,
+which will then send the evidence of third-party dependencies to a server for
+matching with known vulnerabilities, whose data stored in a vulnerability
+database. The vulnerability database itself is curated by a team security
+researchers in years.</p><p>Veracode provides an <em>Agent-Based Scan</em> service using a <em>Command-Line Interface</em>
+(<em>CLI</em>) agent that the customers run on their own machines to scan for
+vulnerable libraries used by their applications. The SCA CLI agent sends the
+evidence of third-party libraries to a data server, which matches them with
+known vulnerable libraries in the database.</p><p>Veracode&apos;s CLI agent runs on the customer&apos;s side, and it is important to ensure
+that it works correctly, given the environment the customer runs the agent in.
+There are three kinds of automated testing that we perform for the CLI agent:</p><ol><li><p><em>Unit testing</em>, which is the test that the output or behavior of methods are
+correct, given some input.</p></li>
+<li><p><em>Integration testing</em>, which is to actually execute the agent in various
+configurations, but scanning mocks instead of actual projects. Here we
+observe the actual output of the agent, such as its return value. There is no
+actual communication with the SCA vulnerability database server.</p></li>
+<li><p><em>System testing</em>, which is to actually execute the agent for scanning
+real projects and observe its behavior. Here the test checks the correctness
+of the actual messages sent by the agent to the server, which constitute the
+output of the agent.</p></li></ol>
+<p>In this article we discuss our approach to system testing, which, in order to
+test for the output correctness, generates checks using a <em>capture</em> mechanism
+and perform the actual test using a <em>replay</em> mechanism. The advantage of using
+such mechanisms is that it allows us to <em>mock</em> the SCA server and the library
+repositories during agent run, such as when issues are detected by the tests, we
+will be able to immediately localize as an issue belonging to the agent itself.
+As at the time of writing, for Veracode agent-based scan, the system testing has
+been implemented for real project scans on the Linux platform, and the same for
+Windows platform is planned.</p><h2 id="testing-objectives">Testing Objectives</h2><p>Testing can be done for various purposes, such as for testing the usability and
+performance of the software being developed. Here our strategic purpose of
+performing system testing is to detect <em>regression</em>, that is, the reduction in
+the quality of the CLI agent, which potentially happens as the agent is being
+updated. Particularly, with our system testing we want to ensure that the CLI
+agent and the SCA server, as well as the library repositories work well
+together, particularly after making updates to the source code of the CLI agent.</p><p>The technical objectives include two:</p><ul><li><p>To ensure that the agent actually performs the computation that we expect of
+it. That is, for <em>validation</em>.</p></li>
+<li><p>To ensure that the result of the computation is what we expect. That is, for
+<em>ensuring correctness</em>.</p></li></ul>
+<p>It should be obvious that the major limitation of testing is in the limited
+number of ways we can validate or ensure correct the software under test. We
+cannot ensure that the software will be have correctly if the particular
+behavior is untested. In other words, it is unable to ensure that something
+unexpected will never happen.</p><p>Testing is typically done by executing the software or part of it, and observe
+the outcome. Validation can be performed by observing that the execution does
+reach some favorable end points (no exceptions, hangs, etc., unless these are
+what we test the software for), whereas correctness can be determined by
+observing that whenever a favorable end state is reached, the computation result
+matches expectation.</p><h2 id="capture-and-replay">Capture and Replay</h2><p>The following message sequence chart shows a simplification of the interactions
+among the CLI agent, the SCA server, and the library repository (e.g., Maven
+central, PyPi, etc.) when the CLI agent scans a repository:</p><p><img alt="CLI Agent Interaction with the SCA Server" src="../images/agent-server-interaction.png"></p><p>The purpose of our system testing is to test the interactions between the SCA
+system&apos;s components, where it needs to check that the proper interaction is
+actually performed (validation), and that the content of the interaction is as
+expected (correctness). The CLI agent is a highly complex software, which limits
+us into performing black-box testing only. In black-box testing, we check for
+the outputs of the system under test without considering the implementation
+details of the system itself. Therefore, when scanning a project implemented in
+a particular language or build system, we test that <em>the CLI agent sends the
+correct requests</em> to the SCA server. This is because we consider the requests to
+be the outputs of the CLI agent. As we can see here, we perform validation by
+observing that the CLI agent actually sends the requests during its execution,
+and we ensure correctness by observing that each time the CLI agent sends a
+request, it sends the <em>correct</em> one.</p><p>Here we need to define what is a correct request. We define a <em>correct</em> request
+to be a request that matches our record, when the same project was scanned last.
+Therefore, there is a need to store the requests for a successful run once, for
+comparison with subsequent runs.</p><p>Not only the requests, we also need to record the responses sent back by the SCA
+server and the library repository to the CLI agent. These responses are from the
+previous successful run, so that when the failure occurs in repeat runs, we can
+isolate the cause to be that of the CLI agent and not due to changes and
+failures in the remote systems (the SCA server or the library repository).</p><p>The system testing framework thus supports two separate activities:</p><ol><li><p>The <em>capture</em> of the interactions (requests and responses). Here, <code>mitmdump</code>
+from the <a href="https://mitmproxy.org" target="_blank">mitmproxy</a> suite is used. <code>mitmdump</code> is
+started with a custom script that logs all requests and responses to JSON
+files. In this activity, the framework executes the agent and records the
+agent&apos;s HTTP requests, together with the QA SCA server&apos;s and library
+repository&apos;s responses. The raw requests and responses are collated into a
+<em>cassette</em> (so they can later be replayed without actually contacting the
+servers) and a JSON file containing all requests made.</p></li>
+<li><p>The <em>replay</em> of the interactions (requests and responses) for testing. This
+is the actual test execution. Here, when the agent sends a request, the
+request reaches a local proxy (<code>mitmdump</code>), which then forwards it to a local
+mock server, implemented using <a href="https://sinatrarb.com" target="_blank">Sinatra</a>. The local
+server then responds to the CLI agent by sending the recorded responses in
+the cassette back to it, via the proxy. When the CLI sends an evidence query
+to the server, the framework tests that the query matches the recorded,
+previously-sent query during the capturing process.</p></li></ol>
+<p>An important thing to remember here is that the agent does not test for the
+consistency of the responses from the SCA server and the library repository with
+previously-recorded responses. That is, the previously-recorded responses are
+only used for replaying the responses of the SCA server and the library
+repository to the CLI agent. This is because <strong>the test subject is the CLI
+agent</strong>, and therefore we focus our effort in matching the requests with the
+recorded requests, since the requests are the outputs of the agent.</p><p>The CLI agent supports scanning projects implemented using a variety of
+languages and build systems from Java Maven projects to Objective-C with
+Cocoapods and even C/C++ with <code>make</code>. Due to a large number and variety of
+tests, the scanned projects are divided into test <em>suites</em> for which currently
+there are 17. The suites and the functional testing are executed in parallel
+(whenever CPU resources are available) in the Gitlab CI. The name of the CI test
+job indicates the kind of repositories that are scanned by the CLI agent for
+testing. The following shows all the suites as shown by the Gitlab CI web
+interface, but also including the integration testing job, whose name is
+<code>functional</code>.</p><p><img alt="CLI Agent Test Jobs" src="../images/test-jobs.png"></p><h2 id="afterthoughts">Afterthoughts</h2><p>System testing for a client/server system has many facets. Here we have
+discussed several of them, including matching network interactions. At the
+moment we cannot guarantee that our design has been optimal. Our framework has
+weaknesses, the most important one is that changes in the environments may cause
+test failures. For some of the example repositories that we scan, the specified
+dependency version constraints in the build file can be too weak such that the
+the replay fails not because of regression, but because dependency version
+numbers that are detected in new scans do not match the recorded version
+dependencies. For issues such as these, future improvements can be made, such as
+having a mock library repository that does not (frequently) update the versions
+of the libraries it host.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-functional.html" class="navigation navigation-prev " aria-label="Previous page: Execute Your User Stories!">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06-contract.html" class="navigation navigation-next " aria-label="Next page: Contract testing with Pact">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Where is my cassette? Mocking system testing using capture and replay","level":"1.6","depth":1,"next":{"title":"Contract testing with Pact","level":"1.7","depth":1,"path":"chapters/06-contract.md","ref":"chapters/06-contract.md","articles":[]},"previous":{"title":"Execute Your User Stories!","level":"1.5","depth":1,"path":"chapters/04-functional.md","ref":"chapters/04-functional.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/05-where-is-my-casette.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

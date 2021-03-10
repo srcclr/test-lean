@@ -1,0 +1,497 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Beyond Unit Tests: Property-based Testing · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-functional.html" />
+    
+    
+    <link rel="prev" href="01-automated-test-case-generation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Beyond Unit Tests: Property-based Testing</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="beyond-unit-tests-property-based-testing">Beyond Unit Tests: Property-based Testing</h1><h2 id="expressing-program-behaviours">Expressing Program Behaviours</h2><p>In a <a href="01-automated-test-case-generation.html">previous article</a>, we looked at the use of <a href="http://www.evosuite.org/" target="_blank">EvoSuite</a> framework for automated test case generation in Java. As mentioned in that article, EvoSuite uses <em>search-based</em> and <em>constraint-based</em> methods for generation of test cases. These methods are guided by coverage criteria (e.g. branch coverage) and ability to explore different paths in the program. The test cases generated by these methods may not capture the intended behavior of the program. In today&apos;s article we will see how we can generate test cases that capture certain behaviors about programs. This can be done using <em>property-based</em> testing.</p><p><a href="https://github.com/pholser/junit-quickcheck" target="_blank">JUnit-QuickCheck</a> is a library that provides <em>property-based</em> testing for Java programs. It is inspired by the <a href="http://en.wikipedia.org/wiki/QuickCheck" target="_blank">QuickCheck</a> library for Haskell that first pioneered this approach for automated testing. The library makes use of JUnit&apos;s <a href="https://github.com/junit-team/junit/wiki/Theories" target="_blank">Theory</a> feature to support parameterized test cases. These test cases allow the developer to specify the property that the method under test should satisfy. JUnit-QuickCheck then uses randomly generated values to test the property. The following example shows how to use the <code>@Theory</code> annotation to specify a test method:</p><pre><code class="lang-java"><span class="hljs-meta">@RunWith</span>(Theories.class)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PropertyJUnitTest</span> </span>{
+  <span class="hljs-meta">@Theory</span> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testEncodeBase64</span><span class="hljs-params">(@ForAll <span class="hljs-keyword">byte</span> [] src)</span></span>{
+    <span class="hljs-keyword">byte</span> [] ec = EncodeBase64.encode(src);
+    <span class="hljs-keyword">byte</span> [] dec = EncodeBase64.decode(ec);
+    Assert.assertArrayEquals(src,dec);
+  }
+}</code></pre>
+<p>This unit test is calling the <code>encode</code> and <code>decode</code> functions of the <code>EncodeBase64</code>
+class from the <a href="https://github.com/codelion/wox" target="_blank">wox cross platform serialization library</a>.
+The property of interest here is that <code>encode</code> is <a href="https://fsharpforfunandprofit.com/posts/property-based-testing-2/#there-and-back-again" target="_blank"><em>invertible</em></a>, with <code>decode</code> as its inverse, i.e. <code>x = decode(encode(x))</code>. In other words, we want to check that encoding a byte array and then decoding it back leads to the same byte array. The <code>assertArrayEquals</code> at the last line ensures that this property is satisfied. This property is tested by randomly generating a large number (100 by default) of byte arrays and calling the <code>testEncodeBase64</code> with those values as input. The <code>@ForAll</code> annotation is provided by the JUnit-QuickCheck library and takes care of generating the appropriate random inputs.</p><p>If there are two inputs to the method, then all possible combinations of the randomly generated inputs are tested. In order to avoid running so many tests we can specify
+constraints on the input as shown below:</p><pre><code class="lang-java"><span class="hljs-meta">@Theory</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testEncodeBase64withLength</span><span class="hljs-params">(@ForAll <span class="hljs-keyword">byte</span> [] src)</span> </span>{
+  assumeThat(src.length, greaterThan(<span class="hljs-number">32</span>)); 
+  <span class="hljs-keyword">byte</span>[] ec = EncodeBase64.encode(src);
+  <span class="hljs-keyword">byte</span>[] dec = EncodeBase64.decode(ec);
+  Assert.assertArrayEquals(src,dec);
+}</code></pre>
+<p>The <code>assumeThat</code> ensures that only byte arrays with length greater than 32 are generated.
+The library already comes with generators for all primitive Java types and there is also a separate module <code>junit-quickcheck-guava</code> containing generators for <a href="https://code.google.com/p/guava-libraries/" target="_blank">Guava</a> types. However, if we need to generate inputs of custom type we need to provide a generator. It can be done by extending the <code>Generator</code> class
+and overriding the <code>generate</code> method. The following example shows one possible way to generate random inputs of the <code>org.jdom2.Element</code> type.</p><pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ElementGenerator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Generator</span>&lt;<span class="hljs-title">Element</span>&gt; </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ElementGenerator</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>(Element.class);
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Element <span class="hljs-title">generate</span><span class="hljs-params">(SourceOfRandomness rand, GenerationStatus gs)</span> </span>{
+    Element e = <span class="hljs-keyword">new</span> Element(RandomStringUtils.randomAlphabetic(<span class="hljs-number">16</span>));
+    <span class="hljs-keyword">int</span> numofAttr = rand.nextInt(<span class="hljs-number">8</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;numofAttr; i++) {
+      e.setAttribute(RandomStringUtils.randomAlphabetic(<span class="hljs-number">8</span>),RandomStringUtils.randomAlphabetic(<span class="hljs-number">8</span>));
+    }
+    e.addContent(RandomStringUtils.randomAlphabetic(rand.nextInt(<span class="hljs-number">16</span>)));
+    <span class="hljs-keyword">return</span> e;
+  }
+}</code></pre>
+<p>Every time the <code>generate</code> method is called, it creates a random alphabetic string that is used as the name of the element and adds up to 8 random attribute values in it. To use this generator for the <code>Element</code> type we need to specify the class with the <code>@From</code> annotation after the <code>@Forall</code> in the test method as shown below:</p><pre><code class="lang-java"><span class="hljs-meta">@Theory</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testElement2String</span><span class="hljs-params">(
+  @ForAll @From(ElementGenerator.class)</span> Element e)
+  <span class="hljs-keyword">throws</span> Exception </span>{
+  String s = element2String(e);
+  <span class="hljs-comment">// ...</span>
+}</code></pre>
+<p>The use of custom generators allows us to use <em>property-based</em> testing for arbitrary classes and methods with little effort. The source code for all the tests is available under the <a href="https://github.com/codelion/wox/tree/master/java/src/test/java/wox/serial/tests" target="_blank">wox repository</a> on GitHub. In addition, some other frameworks (under active development) providing similar functionality for Java are <a href="https://bitbucket.org/blob79/quickcheck" target="_blank">Quickcheck</a> and <a href="http://www.scalacheck.org/" target="_blank">ScalaCheck</a>. However, JUnit-QuickCheck is the only one to use the Theory support in JUnit which makes it a lot easier to integrate in the development workflow.</p><h2 id="checking-informal-specifications">Checking Informal Specifications</h2><p>Property-based testing shifts our focus from simple assertions about values to logical <em>properties</em> that code should satisfy. Another use is checking informal, natural-language specifications; translating these statements into logical terms allows us to leverage a property-based test to check them.</p><p>One of the building blocks we implemented building SourceClear was a library for interpreting <a href="https://www.first.org/cvss/" target="_blank">CVSS</a>, a set of metrics used to assess the severity of software vulnerabilities.</p><p>The textual encoding of a set of CVSS metrics is called a <em>vector</em>:</p><pre><code>AV:A/AC:L/Au:N/C:P/I:P/A:C/E:ND/RL:OF/RC:ND/CDP:H/TD:M/CR:ND/IR:ND/AR:H</code></pre>
+<p>Vectors are structured, consisting of several <em>metric groups</em>.</p><p><img alt="CVSS metric groups" src="../images/cvss-metric-groups.png"></p><p>Furthermore, there are many rules governing the relationships between metric groups and values, <a href="https://www.first.org/cvss/v2/guide" target="_blank">specified informally</a>. Both of these make it a prime candidate for property-based testing.</p><p>We start by defining data structures and generators for vectors:</p><pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CVSSVector</span> </span>{
+  BaseVector baseVector;
+  TemporalVector temporalVector;
+  EnvironmentalVector environmentalVector;
+}</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CVSSVectorGenerator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Generator</span>&lt;<span class="hljs-title">CVSSVector</span>&gt; </span>{
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> CVSSVector <span class="hljs-title">generate</span><span class="hljs-params">(SourceOfRandomness rand, GenerationStatus gs)</span> </span>{
+    <span class="hljs-keyword">return</span> gen().fieldsOf(CVSSVector.class).generate(rand, gs);
+  }
+}</code></pre>
+<p>As this library parses and pretty-prints vectors, we test a simple property of the <em>implementation</em>: that parsing is invertible, with pretty-printing as its inverse:</p><pre><code class="lang-java"><span class="hljs-meta">@Property</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cvssVectorInvertible</span><span class="hljs-params">(CVSSVector cvssVector)</span> <span class="hljs-keyword">throws</span> ParseException </span>{
+  assertEquals(cvssVector, <span class="hljs-keyword">new</span> CVSSVector(cvssVector.toString()));
+}</code></pre>
+<p>So far so good.</p><p>CVSS also defines a <a href="https://www.first.org/cvss/v2/guide#3-2-Equations" target="_blank">means</a> of turning a vector into a numeric score, allowing vectors to be ordered (and vulnerabilities prioritized). We transcribe the equations faithfully, then test a simple property from the spec relating the scores of the base and temporal metric groups:</p><pre><code class="lang-java"><span class="hljs-comment">/**
+ * ... the temporal equation will combine the temporal metrics with the base score
+ * to produce a temporal score ranging from 0 to 10. Further, the temporal score will
+ * produce a temporal score no higher than the base score, and no greater than 33% lower
+ * than the base score. 
+ */</span>
+<span class="hljs-meta">@Property</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">temporalScoreRange</span><span class="hljs-params">(BaseVector baseVector, TemporalVector temporalVector)</span> <span class="hljs-keyword">throws</span> ParseException </span>{
+    <span class="hljs-keyword">double</span> temporal = temporalVector.getScore(baseVector);
+    assertTrue(<span class="hljs-number">0</span> &lt;= temporal &amp;&amp; temporal &lt;= <span class="hljs-number">10</span>);
+    assertTrue(temporal &lt;= baseVector.getScore());
+    <span class="hljs-keyword">double</span> baseThreshold = baseVector.getScore() * (<span class="hljs-number">1</span> - <span class="hljs-number">0.33</span>);
+    assertTrue(temporal &lt;= baseThreshold);
+}
+</code></pre>
+<p>Surprisingly, the third assertion fails and a counter-example is printed:</p><pre><code>java.lang.AssertionError: Property temporalScoreRange falsified.
+Args: [AV:A/AC:L/Au:N/C:P/I:P/A:N, E:H/RL:OF/RC:UR]</code></pre>
+<p>Our first thought is that the implementation is wrong in some way. Perhaps floating-point error? We check <a href="https://nvd.nist.gov/vuln-metrics/cvss/v2-calculator" target="_blank">two</a> <a href="https://bit-sentinel.com/common-vulnerability-scoring-system-cvss-2-0-online-calculator/" target="_blank">other</a> implementations of CVSS2 scoring and see the same result: a base score of 4.8, a temporal score of 4.0, and the impossible assertion <code>4.0 &lt; 4.8 * (1-0.33)</code>.</p><p>Looking at the temporal equation analytically, we see that the minimum temporal score is:</p><pre><code>temporal = base * min(exploitability) * min(remediationLevel) * min(reportConfidence)
+         = base * 0.85 * 0.87 * 0.9
+         = base * 0.67 (2 d.p.)</code></pre>
+<p>In other words, &quot;33% lower than the base score&quot; is the <em>lower bound</em>. Clearly the spec should have said <strong>no smaller than</strong>, i.e. <code>base * (1-0.33) &lt;= temporal &lt;= base</code>. Note also the inconsistent uses of <em>higher</em> and <em>greater</em>, and the difficulty of parsing that sentence in general; issues like these illustrate why natural language should be kept to a minimum in specifications.</p><p>We continue transcribing and testing, and find a similar error in the computation for the environmental score.</p><pre><code class="lang-java"><span class="hljs-comment">/**
+ * ... the environmental equation will combine the environmental metrics with the temporal
+ * score to produce an environmental score ranging from 0 to 10. Further, this equation will
+ * produce a score no higher than the temporal score.
+ */</span>
+<span class="hljs-meta">@Property</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">environmentalScoreRange</span><span class="hljs-params">(BaseVector baseVector, TemporalVector temporalVector,
+                                    EnvironmentalVector environmentalVector)</span> <span class="hljs-keyword">throws</span> ParseException </span>{
+    <span class="hljs-keyword">double</span> environmentalScore = environmentalVector.getScore(baseVector, temporalVector);
+    assertTrue(<span class="hljs-number">0</span> &lt;= environmentalScore &amp;&amp; environmentalScore &lt;= <span class="hljs-number">10</span>);
+    assertTrue(environmentalScore &lt; temporalVector.getScore(baseVector));
+}</code></pre>
+<pre><code>java.lang.AssertionError: Property environmentalScoreRange falsified.
+Args: [AV:N/AC:M/Au:M/C:P/I:C/A:P, E:H/RL:ND/RC:UR, CDP:LM/TD:ND/CR:M/IR:M/AR:M]</code></pre>
+<p>Here the equations are given in terms of both the base and temporal scores, and consequently the cause of the error is much less obvious, demonstrating the value of the property-based approach.</p><p>The interesting thing about this example is that it shows that once the implementation is correct (e.g. comparable to another implementation), the property-based test extends to a test of the <em>specification</em>.</p><p>This idea is very similar to grammar-based fuzzing, which we&apos;ll cover next.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-automated-test-case-generation.html" class="navigation navigation-prev " aria-label="Previous page: Beyond Unit Tests: Automated Test Case Generation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-functional.html" class="navigation navigation-next " aria-label="Next page: Execute Your User Stories!">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Beyond Unit Tests: Property-based Testing","level":"1.4","depth":1,"next":{"title":"Execute Your User Stories!","level":"1.5","depth":1,"path":"chapters/04-functional.md","ref":"chapters/04-functional.md","articles":[]},"previous":{"title":"Beyond Unit Tests: Automated Test Case Generation","level":"1.3","depth":1,"path":"chapters/01-automated-test-case-generation.md","ref":"chapters/01-automated-test-case-generation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/02-property-based-testing.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

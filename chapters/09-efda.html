@@ -1,0 +1,397 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>EFDA: a benchmark for software composition analysis tools · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="08-symbolic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >EFDA: a benchmark for software composition analysis tools</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="efda-a-benchmark-for-software-composition-analysis-tools">EFDA: a benchmark for software composition analysis tools</h1><p>At SourceClear, we build tools that help customers detect and manage security vulnerabilities in the open source libraries they use. We constantly ask ourselves this question, &#x201C;What makes a good OSS management tool?&#x201D; At the end of the day, we believe, it comes down to data. Up-to-date and reliable data. If your project is using the the latest version of Library A which was published 1 day ago, the tool must be able to detect it. If Library A has 3 CVEs, the tool must be able to inform you of that, at least. If the library has vulnerabilities that are not published to the CVE database yet, can the tool find them?</p><p>At SourceClear, we believe data is king. However, even before those data can be retrieved, an OSS management tool must be able to scan the project. Over these years, we have encountered different kinds of project setups that could cause an OSS management tool to fail. The tool might fail to scan the project completely or report a dependency version that is different from what the package manager actually resolves to. Because of this, we created various sample projects to keep track of the languages, package managers, and project setups that our Lightman Scanner supports.</p><h2 id="open-sourcing-efda">Open-Sourcing EFDA</h2><p>Today, we are releasing a collection of sample projects as a single open source project called Evaluation Framework for Dependency Analysis (EFDA). The code repo can be found here. This repository will be managed by the Continuous-Security Security project which we will be announcing in a few weeks. In this repository, you will find projects implemented in various languages and with different setups that aim to test the features of an OSS management tool. The projects contain details such as the number of dependencies, whether they are direct or transitive dependencies, and the number of vulnerabilities present. In this repository, you will also find a spreadsheet that lists the features being tested. This spreadsheet allows you to customize the importance of the features and compute a score to determine how well an OSS management tool fits your needs.</p><p><img alt="EFDA Spreadsheet" src="../images/efda-spreadsheet.png"></p><h2 id="our-guiding-principles">Our Guiding Principles</h2><p>When we set up these example projects, we followed a set of guiding principles.</p><h3 id="the-basic-set-of-test-cases">The basic set of test cases</h3><p>If we are checking whether a tool supports a particular package manager, what is the minimal set of features we need to test for us to say &#x201C;yes, this tool supports this package manager reasonably&#x201D;? Take for example, npm projects. Projects using npm declare their dependencies in package.json. It is common for users of npm to declare version ranges in package.json instead of sticking to a specific version. Another common setup is to separate dependencies into production and development dependencies. How about npm-shrinkwrap.json which helps to lock dependencies&#x2019; versions? As such, you can find in the npm folder project setups that test each scenario specifically. The same guiding principle is applied when we create example projects for other languages/package managers.</p><h3 id="independent-self-contained-test-cases">Independent, self-contained test cases</h3><p>Of course, in a real-world scenario we would expect a project to use more than one feature from its package manager. But we want to make the evaluation process simpler and debugging easier. Each project setup tests one scenario specifically. If a tool fails to report the expected number of dependencies or vulnerabilities for the project, we can safely say that it does not support the feature well enough without digging deeper to find out exactly which feature of the package manager is breaking the tool&#x2019;s analysis process.</p><h3 id="breadth-and-depth-of-coverage">Breadth and depth of coverage</h3><p>There are 2 methods to evaluate a dependency analysis tool. The first method is to look at how many package managers it supports - the breadth of its coverage. The second method is to look at how well it supports each package manager - the depth of its coverage. EFDA checks both the breadth and depth of coverage. This is why at the time of this writing, it has projects implemented in 8 programming languages, 15 package managers, and many more various setups for those package managers.</p><h3 id="configurable-weightage-of-features">Configurable weightage of features</h3><p>Some features may be important to a group of users but not to another group. Some users may not even care if a particular language/package manager is being supported if they are not using them. In the spreadsheet that accompanies the EFDA repository, users can customize the importance (0-5) of each feature. A final score will be computed based on the importance given to each feature.</p><h2 id="contributions">Contributions</h2><p>Our goal for releasing this repository is to help everyone who are using open source libraries decide which tool is most suitable for them. You can help make the project better and more comprehensive by adding project setups that are missing in the repository. We look forward to your contributions and comments!</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="08-symbolic.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Dynamic Symbolic Execution with Pathgrind">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"EFDA: a benchmark for software composition analysis tools","level":"1.14","depth":1,"next":{"title":"Perspectives","level":"1.15","depth":1,"ref":"","articles":[]},"previous":{"title":"Dynamic Symbolic Execution with Pathgrind","level":"1.13","depth":1,"path":"chapters/08-symbolic.md","ref":"chapters/08-symbolic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/09-efda.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

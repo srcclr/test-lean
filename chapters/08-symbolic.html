@@ -1,0 +1,458 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dynamic Symbolic Execution with Pathgrind · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="09-efda.html" />
+    
+    
+    <link rel="prev" href="13-grammar.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Dynamic Symbolic Execution with Pathgrind</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dynamic-symbolic-execution-with-pathgrind">Dynamic Symbolic Execution with Pathgrind</h1><p>In this article, we will learn about the technique of <em>dynamic symbolic execution</em> and how it can be used for testing and fuzzing binaries. In two previous articles (<a href="../blog/automated-unit-test-generation-for-java">1</a>,<a href="../blog/property-based-testing-for-java">2</a>), we already saw how automated methods can be used for test case generation in Java. Dynamic symbolic execution is an automated approach to generating new test cases based on constraints that are collected from an execution trace. For this article, we will use the <a href="https://github.com/codelion/pathgrind" target="_blank">Pathgrind</a> tool. Pathgrind is a symbolic execution engine which can be used for automated fuzzing of 32-bit binaries on Linux. Before we jump in, let us first start with some background about symbolic execution.</p><p><strong>Symbolic Execution</strong></p><p>Wikipedia defines <a href="http://en.wikipedia.org/wiki/Symbolic_execution" target="_blank">symbolic execution</a> as &quot;the means of analyzing a program to determine what inputs cause each part of the program to execute&quot;. The basic idea behind symbolic execution can be explained by the following steps:</p><ul><li>Execute the program with a given input
+</li>
+<li>Build a symbolic formula during execution which captures the path taken by the input through the program
+</li>
+<li>Minimally change the formula to create a new formula
+</li>
+<li>Solve the new formula to generate another input to the program
+</li>
+<li>Repeat the steps by executing the program with the new input
+</li></ul>
+<p>As an example, let us consider the following <code>max</code> method.</p><pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> z)</span> </span>{
+  <span class="hljs-keyword">int</span> m = x;
+  <span class="hljs-keyword">if</span>(y&gt;m &amp;&amp; y&gt;z)
+    m = y;
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(z&gt;m)
+    m = z;
+  <span class="hljs-keyword">return</span> m;
+}</code></pre>
+<p>The method takes as input, three integer values and returns the maximum value among the three. So, calling the method with the input <code>max(1,3,2)</code> return 3 as the maximum value. While executing the method we can build the following symbolic formula which captures the path taken by the input through the program. This symbolic formula is also referred to as the path condition (PC).</p><pre><code class="lang-c">  Statement                    Formula
+  inputs : x0, y0, z0
+  <span class="hljs-keyword">int</span> m = x;                   <span class="hljs-function"><span class="hljs-literal">true</span>
+  <span class="hljs-title">if</span><span class="hljs-params">(y&gt;m &amp;&amp; y&gt;z)</span>               m0 </span>= x0
+    m = y;                     m0 = x0 /\ y0 &gt; m0 /\ y0 &gt; z0
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(z&gt;m)                 m0 = x0 /\ y0 &gt; m0 /\ y0 &gt; z0 /\ m1 = y0
+    m = z;
+  <span class="hljs-keyword">return</span> m;                    output: m1</code></pre>
+<p>In the beginning, the execution starts with the symbolic formula <code>true</code> and then continuing for each statement in the program we add a constraint to the formula. Thus, the path condition for the given input (1,3,2) is <code>m0 = x0 /\ y0 &gt; m0 /\ y0 &gt; z0 /\ m1 = y0</code>. After eliminating <code>m0</code> and substituting the value of <code>m1</code> in the formula we get <code>y0 &gt; x0 /\ y0 &gt; z0 /\ 3 = y0</code>. This formula captures the path taken by the program for the given input. Now, in order to mutate the formula there are several possibilities: we can negate a particular constraint in the conjunction or we can drop a constraint from the conjunction altogether. For this example let us just negate the first constraint. We get an another formula <code>y0 &lt;= x0 /\ y0 &gt; z0 /\ 3 = y0</code>, and we need to check if this formula is satisfiable. This can be done using a number of existing constraint solvers (like <a href="https://sites.google.com/site/stpfastprover/" target="_blank">STP</a>) or <a href="http://en.wikipedia.org/wiki/Satisfiability_modulo_theories" target="_blank">SMT</a> solvers (like <a href="http://z3.codeplex.com/" target="_blank">z3</a>). The solver tells if the formula is unsatisfiable, or in case the formula is satisfiable it returns the values of the variables in the formula that make the formula valid. For our new path condition <code>y0 &lt;= x0 /\ y0 &gt; z0 /\ 3 = y0</code>, the solver gives the following values for variables <code>x0</code>,<code>y0</code> and <code>z0</code>.</p><pre><code class="lang-java">x0 = <span class="hljs-number">3</span>
+y0 = <span class="hljs-number">2</span>
+z0 = <span class="hljs-number">2</span></code></pre>
+<p>We can now repeat the same process with these new inputs and carry on the symbolic execution of the program one path at a time. This kind of symbolic path exploration can be visualized with the following execution tree for the <code>max</code> method.</p><p><img alt="Execution Tree for max method" src="../images/ExecutionTree.png"></p><p>Each input that is discovered leads to covering of another subsequent path in the tree. In this case, there are only 3 distinct paths in the program, so just 3 path conditions are required to explore all the paths in the program. For methods without loops or recursion the path exploration is always finite and terminating. However, in general in the presence of loops and recursion a program may potentially have unbounded number of paths. Exploring a program by exhaustively testing all paths in the program can lead to exponential number of test cases. This problem is commonly referred as path explosion, and is one of the limitations of symbolic execution. In order address this limitation, most tools support setting up a fixed depth until which the execution tree is explored and the path exploration process terminates after that depth. A similar strategy is used in pathgrind which we will look at in the next section.</p><p><strong>Pathgrind</strong></p><p><a href="https://github.com/codelion/pathgrind" target="_blank">Pathgrind</a> is a symbolic execution engine based on Valgrind that uses STP for solving constraints. It can be used to fuzz 32-bit binaries on Linux. The installation is fairly simple and detailed in the <a href="https://github.com/codelion/pathgrind/blob/master/README.md" target="_blank"><code>README.md</code></a> file on GitHub. Once installed, you need to edit the <code>settings.cfg</code> file to include the following for each program you want to fuzz.</p><pre><code>[test]
+prog      = testcase/test.exe
+input     = input.txt
+max_bound   = 100</code></pre>
+<p>The <code>prog</code> parameter specifies the path to the binary and the <code>input</code> parameter gives the file to use for the initial input to start the symbolic execution. It also has an optional <code>max_bound</code> parameter to bound the search during path exploration. By default, pathgrind assumes that the program takes input from a file and generates new files based on symbolic execution to fuzz the program. Once the settings are configured we can just call <code>fuzz.py test</code> to run pathgrind on input configured with <code>test</code> section in the <code>settings.cfg</code> file.</p><pre><code>user@user-VM:~/git/pathgrind$ ./fuzz/fuzz.py test
+[+] expanding execution with file input.txt
+    * 4 path constraints (bound: 0)
+    * solving constraints [0:0]
+    * new_input (1.txt): bood
+    * solving constraints [0:1]
+    * new_input (2.txt): .aod
+    * solving constraints [0:2]
+    * new_input (3.txt): ..dd
+    * solving constraints [0:3]
+    * new_input (4.txt): ...!
+[+] checking each new input
+    1.txt[-] argument to program is
+    2.txt[-] argument to program is
+    3.txt[-] argument to program is
+    4.txt[-] argument to program is
+[+] scoring each new input
+[+] expanding execution with file 4.txt
+    * 4 path constraints (bound: 4)
+...
+Paths Explored: 15
+Time Taken: 10.85</code></pre>
+<p>The output of running pathgrind is shown above. The execution starts with file <code>input.txt</code> and new inputs (<code>1.txt, 2.txt etc.</code>) are generated by solving the path conditions (constraints). At the end, it also prints the number of paths explored and the total time taken. While fuzzing, pathgrind generates inputs and executes the binary with those inputs in the hope that one of the input will lead to a memory error and a crash that is detected by valgrind. The crash can be further investigated using the output from valgrind to determine the exploitability of the issue. Thus, new bugs or vulnerabilities in the binary can be found in a fully automated manner.</p><p>For the simple test program the fuzzing process terminates in a few seconds, but for more realistic programs of interest like a browser (or the libPNG library) the process can take hours or even days to find some interesting case of failure. This is primarily due to problem of path explosion as mentioned earlier. If we want to see the time taken to execute each path condition we need to install <a href="http://bokeh.pydata.org/en/latest/" target="_blank">bokeh</a> a Python-based framework for data visualization and just use <code>plotfuzz.py test</code>. It will launch the browser and show a running plot of the time taken to solve each formula and the time taken for path exploration (generating new formula).</p><p><img alt="Path Exploration Time Taken" src="../images/PathExplosion.png"></p><p>The green line is the time taken in solving the constraint while the blue line shows the time taken in generating new constraints. As is clear from the graph, the time taken to generate new constraints is much larger than the time taken by the external solver (in this case STP) to solve them. I gave a talk on &quot;Visualizing Symbolic Execution with Bokeh&quot; at <a href="https://twitter.com/pydatasg" target="_blank">PyData Singapore</a> earlier this year on this topic. The <a href="http://asankhaya.github.io/ppt/PyDataSing.pptx" target="_blank">slides</a> of the presentation contain more examples on how to visualize some of the issues with path explosion in symbolic execution. For instance, if we implement the path exploration of loops in a naive way we will have lots of paths which are similar to each other that represent the unwinding of the loop. The following scatter plot shows what this looks like.</p><p><img alt="Path Similarity" src="../images/PathSimilarity.png"></p><p>The size of the dot in the plot depicts the similarity (larger is more similar). All the dots from number 1 to 40 are very similar to each other and represent paths that are not interesting as they come by exploring loop unwinding. Techniques to address such limitations of symbolic execution are beyond the scope of this article and are a topic of active research in this area. With that we have come to the end of this article, more details about how to optimize path exploration with pathgrind can be found in the paper on <a href="http://asankhaya.github.io/research.html#EUB" target="_blank">Exploiting undefined behaviors for efficient symbolic execution</a>. In addition, to learn more about the path conditions, differences between various symbolic execution engines and solvers you can check out the following paper on <a href="http://arxiv.org/abs/1302.4798" target="_blank">An Empirical Study of Path Feasibility Queries</a>. If you run into any issues running Pathgrind feel free to submit an issue on the <a href="https://github.com/codelion/pathgrind" target="_blank">GitHub repo</a> or send in your pull request.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="13-grammar.html" class="navigation navigation-prev " aria-label="Previous page: GramTest: a tool for grammar-based test case generation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="09-efda.html" class="navigation navigation-next " aria-label="Next page: EFDA: a benchmark for software composition analysis tools">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dynamic Symbolic Execution with Pathgrind","level":"1.13","depth":1,"next":{"title":"EFDA: a benchmark for software composition analysis tools","level":"1.14","depth":1,"path":"chapters/09-efda.md","ref":"chapters/09-efda.md","articles":[]},"previous":{"title":"GramTest: a tool for grammar-based test case generation","level":"1.12","depth":1,"path":"chapters/13-grammar.md","ref":"chapters/13-grammar.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/08-symbolic.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

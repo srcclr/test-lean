@@ -1,0 +1,452 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Contract testing with Pact · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.4.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="05-where-is-my-casette.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00-introduction.html">
+            
+                <a href="00-introduction.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01-automated-test-case-generation.html">
+            
+                <a href="01-automated-test-case-generation.html">
+            
+                    
+                    Beyond Unit Tests: Automated Test Case Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02-property-based-testing.html">
+            
+                <a href="02-property-based-testing.html">
+            
+                    
+                    Beyond Unit Tests: Property-based Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-functional.html">
+            
+                <a href="04-functional.html">
+            
+                    
+                    Execute Your User Stories!
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-where-is-my-casette.html">
+            
+                <a href="05-where-is-my-casette.html">
+            
+                    
+                    Where is my cassette? Mocking system testing using capture and replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="06-contract.html">
+            
+                <a href="06-contract.html">
+            
+                    
+                    Contract testing with Pact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Test Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="10-cypress.html">
+            
+                <a href="10-cypress.html">
+            
+                    
+                    E2E with Cypress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09-monitoring.html">
+            
+                <a href="09-monitoring.html">
+            
+                    
+                    Monitoring as Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="07-update-advisor.html">
+            
+                <a href="07-update-advisor.html">
+            
+                    
+                    Proof Pearl: On the Correctness of Update Advisor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="13-grammar.html">
+            
+                <a href="13-grammar.html">
+            
+                    
+                    GramTest: a tool for grammar-based test case generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="08-symbolic.html">
+            
+                <a href="08-symbolic.html">
+            
+                    
+                    Dynamic Symbolic Execution with Pathgrind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="09-efda.html">
+            
+                <a href="09-efda.html">
+            
+                    
+                    EFDA: a benchmark for software composition analysis tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" >
+            
+                <span>
+            
+                    
+                    Perspectives
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Contract testing with Pact</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="contract-testing-with-pact">Contract testing with Pact</h1><p>Microservices have been gaining popularity in recent years and it is not surprising why. Unlike the traditional monolithic service architecture, Microservices allow you to build an application as a collection of services, each with a specific purpose. For example, you can have an accounts service which manages user accounts and a payments service which manages user payments. As great as Microservices sound, it is not without shortcomings. Among its biggest issues is testing (which is, in fact, a common problem not specific to Microservices).</p><p>A common and traditional way of testing services is Integration Testing. In Integration Testing, you start all the services that are supposed to work together and run the databases that they are connected to in a clean slate. There&apos;s a lot of setup and teardown involved when running an integration test once. Integration tests are known to be brittle, hard to setup, and take a long time to run. An alternative to Integration Testing is Contract Testing.</p><h2 id="what-is-contract-testing">What is Contract Testing?</h2><p>Contract testing is not a new idea but has been gaining recognition in recent years as Microservices become more popular. The idea is to test the agreements (contracts) between API providers and consumers. The contracts define the structure of the API requests and responses which both sides must adhere to. Contract Testing is &quot;consumer driven&quot; (commonly known as Consumer-driven Contract Testing), i.e. the consumer of the APIs will define the requests it will send and the responses it expects and the Provider validates the contracts.</p><h2 id="contract-testing-in-veracode">Contract Testing in Veracode</h2><p>In Veracode, we run many microservices and use Contract Testing to ensure that both the provider and consumer of APIs are communicating correctly with each other. The library we are using for Contract Testing is <a href="https://docs.pact.io" target="_blank">Pact</a>. We run a self-hosted <a href="https://docs.pact.io/pact_broker" target="_blank">Pact Broker</a> to help us share the contracts between consumers and providers. We trigger contracts verification with Gitlab webhooks. The diagram below shows the flow from when a commit is pushed to the Consumer project to the complete verification of the contracts by the Provider.</p><p><img alt="Pact Broker - Gitlab Trigger" src="../images/pactbroker-gitlab.png"></p><p>The steps that happen can be summarized as:
+1. When a commit is pushed to the Consumer service&apos;s repository, the repository&apos;s Gitlab job compiles, runs the tests, and generates the contract files. Contract files are JSON files generated by Pact. The contracts are published to the Pact Broker and the job waits for the verification results using Pact&apos;s command and option <code>pact-broker can-i-deploy</code> (see <a href="https://github.com/pact-foundation/pact_broker-client#can-i-deploy" target="_blank">can-i-deploy</a>).
+2. If contracts have changed, Pact Broker triggers a new pipeline on the Provider service to run its tests and validate the latest contracts.
+3. Provider service publishes the verification results to Pact Broker.
+4. Pact Broker sends the results to the Consumer service. If verification was successful, the job passes and the next job in the pipeline continues. If the verification failed,
+the job fails and the pipeline will be stopped to prevent a release from going out.</p><h3 id="down-to-the-code-level">Down to the code level</h3><p>Most of our services are written in Java and to use Pact in our projects, we use <code>au.com.dius:pact-jvm-consumer-junit_2.12</code> in our Consumer service projects and <code>au.com.dius:pact-jvm-provider-junit_2.12</code> in our Provider service projects.</p><p>As an example, consider 2 services that we run - ArtifactService, which provides vulnerabilities-related data i.e. the Provider, and InternalAdmin, which is the backend service for an internal tool i.e. the Consumer.</p><h4 id="consumer-defines-the-contract">Consumer defines the contract</h4><p>Define the rule that uses Pact.</p><pre><code class="lang-java"><span class="hljs-meta">@Rule</span>
+<span class="hljs-keyword">public</span> PactProviderRuleMk2 artifactServiceProvider = <span class="hljs-keyword">new</span> PactProviderRuleMk2(<span class="hljs-string">&quot;artifact-service&quot;</span>, <span class="hljs-keyword">this</span>);</code></pre>
+<p>In the unit test, state the Pact to use for verification.</p><pre><code class="lang-java"><span class="hljs-meta">@PactVerification</span>(fragment = <span class="hljs-string">&quot;artifactByIdPact&quot;</span>)
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getArtifactById</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// tests and assertions for methods that will call the Provider&apos;s API.</span>
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-meta">@Pact</span>(consumer = <span class="hljs-string">&quot;internal-admin&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> RequestResponsePact <span class="hljs-title">artifactByIdPact</span><span class="hljs-params">(PactDslWithProvider builder)</span> </span>{
+  <span class="hljs-comment">// Code to convert our data models to PactDsl objects.</span>
+  <span class="hljs-comment">// PactDsl objects are needed for Pact to generate the contracts.</span>
+  PactDslJsonBody responseBody = ...
+
+  <span class="hljs-keyword">final</span> PactDslResponse pactDslResponse = builder
+      .given(<span class="hljs-string">&quot;Artifact with id 1 in database&quot;</span>)
+      .uponReceiving(<span class="hljs-string">&quot;Request for artifacts by id=1&quot;</span>)
+      .path(<span class="hljs-string">&quot;/1&quot;</span>)
+      .method(<span class="hljs-string">&quot;GET&quot;</span>)
+      .willRespondWith()
+      .status(<span class="hljs-number">200</span>)
+      .headers(...)
+      .body(responseBody);
+
+  <span class="hljs-keyword">return</span> pactDslResponse.toPact();
+}</code></pre>
+<p>When the tests are being run, for example using <code>mvn test</code>, Pact generates the contracts in a JSON file. In our CI/CD environment, this file will be published to the Pact Broker.</p><h3 id="provider-verifies-the-contract">Provider verifies the contract</h3><p>One interesting thing about Contract Testing with Pact is that you do not have to write any test cases in the Provider service to verify contracts. Provider verify contracts by validating states.</p><h4 id="what-is-a-state">What is a state?</h4><p>As the name suggests, &quot;state&quot; is a condition the Provider is expected to be in when Pact sends a request (generated by Consumer) to test the Provider. This state is essentially the <code>.given(...)</code> method as shown in the Consumer&apos;s unit test codes above. Think of how during integration tests you need to ensure the database is in a clean slate or whether certain environment variables are set correctly. This is a state.</p><p>Run the Provider tests as a Spring Boot Application with PactRunner</p><pre><code class="lang-java"><span class="hljs-meta">@ContextConfiguration</span>
+<span class="hljs-meta">@RunWith</span>(PactRunner.class)
+<span class="hljs-meta">@Provider</span>(<span class="hljs-string">&quot;artifact-service&quot;</span>)
+<span class="hljs-meta">@PactBroker</span>(host = <span class="hljs-string">&quot;your pact broker url&quot;</span>, scheme = <span class="hljs-string">&quot;https&quot;</span>)
+<span class="hljs-meta">@SpringBootTest</span>(classes = {ArtifactService.class})
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArtifactServiceProviderContractTest</span> </span>{
+  <span class="hljs-comment">// These setup are needed for Pact to know which port the application is running on and thus able</span>
+  <span class="hljs-comment">// to send the requests to.</span>
+  <span class="hljs-keyword">static</span> ConfigurableWebApplicationContext application;
+
+  <span class="hljs-meta">@BeforeClass</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">()</span> </span>{
+    application = (ConfigurableWebApplicationContext) SpringApplication.run(ArtifactService.class);
+  }
+
+  <span class="hljs-meta">@TestTarget</span>
+  <span class="hljs-keyword">public</span> Target target = <span class="hljs-keyword">new</span> HttpTarget(<span class="hljs-string">&quot;http&quot;</span>, <span class="hljs-string">&quot;localhost&quot;</span>,
+      parseInt(application.getEnvironment().getProperty(<span class="hljs-string">&quot;server.port&quot;</span>)));
+}</code></pre>
+<p>Test the state</p><pre><code class="lang-java"><span class="hljs-meta">@State</span>(<span class="hljs-string">&quot;Artifact with id 1 in database&quot;</span>)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetArtifactById</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// codes to insert an artifact with the id into database.</span>
+}</code></pre>
+<p>When Pact runs, it initialises the state accordingly and sends the request as defined by the consumer and compares the response generated by the application with the response expected by the Consumer.</p><h2 id="what-we-like-and-dont-like-about-contract-testing">What we like and don&apos;t like about Contract Testing</h2><p>As with all things, Contract Testing has its pros and cons. For us, Contract Testing adds another validation to our tests because we have been using WireMock all the time to run mock servers and generate stub responses in our unit tests. Replacing WireMock with Pact essentially allows us to generate responses in the Consumer project and take it to the Provider for verification. It is also very easy to test the Provider as we just have to initialise the states. However, this also means that the complexity is on the Consumer side as we need to convert our data models to PactDsl objects.</p><p>It also integrates naturally with our engineering workflow as we will always need to merge the changes in the Provider service with the verification before the Consumer&apos;s build job can pass.</p><h2 id="conclusion">Conclusion</h2><p>Contract Testing has its merits and so far it has worked well for us. Pact is also a relatively new library but already has support for a lot of languages and its libraries have powerful features such as specifying regexes in String properties in contracts. We think that Pact library will continue to improve and Contract Testing will become more convenient and easier to use. If you are using microservices, Contract Testing (and Pact library) is something you should definitely look into.</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-where-is-my-casette.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Where is my cassette? Mocking system testing using capture and replay">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Contract testing with Pact","level":"1.7","depth":1,"next":{"title":"Test Containers","level":"1.8","depth":1,"ref":"","articles":[]},"previous":{"title":"Where is my cassette? Mocking system testing using capture and replay","level":"1.6","depth":1,"path":"chapters/05-where-is-my-casette.md","ref":"chapters/05-where-is-my-casette.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"preface.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}}},"file":{"path":"chapters/06-contract.md","mtime":"2021-03-10T03:55:43.063Z","type":"markdown"},"gitbook":{"version":"3.4.0","time":"2021-03-10T03:56:33.636Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
